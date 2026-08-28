@@ -61,7 +61,7 @@ CEmestre/
 
 ## Estado del proyecto
 
-Actualmente, el proyecto se encuentra **en desarrollo**.
+Actualmente, el proyecto se encuentra **en desarrollo**(sujeto a cambios).
 
 ## Autores
 
