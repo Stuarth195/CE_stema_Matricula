@@ -1,4 +1,4 @@
-# CEmestre
+# CE-stema Matricula
 
 ![C](https://img.shields.io/badge/C-00599C?logo=c\&logoColor=white)
 ![Paradigma](https://img.shields.io/badge/Paradigma-Imperativo-orange)
