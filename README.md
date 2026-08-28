@@ -61,8 +61,12 @@ CEmestre/
 
 ## Estado del proyecto
 
-Actualmente el proyecto se encuentra **en desarrollo**.
+Actualmente, el proyecto se encuentra **en desarrollo**.
 
 ## Autores
 
 Proyecto académico desarrollado para el curso correspondiente del **Tecnológico de Costa Rica (TEC)**.
+*
+## A
+## B
+## C
