@@ -1,0 +1,2994 @@
+{
+    "dsc_curriculum": "INGENIERIA EN COMPUTACION-2022",
+    "id_curriculum": 412,
+    "modality": "Semestre",
+    "academic_degree": "Bachillerato Universitario",
+    "first_level": 0,
+    "levels": [
+        {
+            "id": "Semestre 0",
+            "courses": [
+                {
+                    "id_course": "CI0200",
+                    "name": "examen diagnóstico",
+                    "trucatedName": "examen diagnóstico",
+                    "credits": 0,
+                    "hours": 0,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CI1230"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CI0201"
+                        },
+                        {
+                            "id": "CI0202"
+                        },
+                        {
+                            "id": "CI1201"
+                        },
+                        {
+                            "id": "CI1202"
+                        },
+                        {
+                            "id": "CI1216"
+                        },
+                        {
+                            "id": "CI1218"
+                        },
+                        {
+                            "id": "CI1220"
+                        },
+                        {
+                            "id": "CI1221"
+                        },
+                        {
+                            "id": "CI1230"
+                        },
+                        {
+                            "id": "CI1301"
+                        },
+                        {
+                            "id": "CI1305"
+                        },
+                        {
+                            "id": "CI1307"
+                        },
+                        {
+                            "id": "CI1311"
+                        },
+                        {
+                            "id": "CI2202"
+                        },
+                        {
+                            "id": "CI2216"
+                        },
+                        {
+                            "id": "CI3202"
+                        },
+                        {
+                            "id": "CI3400"
+                        }
+                    ],
+                    "tEquiv": "CI0201,CI0202,CI1201,CI1202,CI1216,CI1218,CI1220,CI1221,CI1230,CI1301,CI1305,CI1307,CI1311,CI2202,CI2216,CI3202,CI3400"
+                },
+                {
+                    "id_course": "CI0202",
+                    "name": "inglés básico",
+                    "trucatedName": "inglés básico",
+                    "credits": 2,
+                    "hours": 3,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CI1230"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CI0200"
+                        },
+                        {
+                            "id": "CI0201"
+                        },
+                        {
+                            "id": "CI1201"
+                        },
+                        {
+                            "id": "CI1202"
+                        },
+                        {
+                            "id": "CI1216"
+                        },
+                        {
+                            "id": "CI1218"
+                        },
+                        {
+                            "id": "CI1220"
+                        },
+                        {
+                            "id": "CI1221"
+                        },
+                        {
+                            "id": "CI1230"
+                        },
+                        {
+                            "id": "CI1301"
+                        },
+                        {
+                            "id": "CI1305"
+                        },
+                        {
+                            "id": "CI1307"
+                        },
+                        {
+                            "id": "CI1311"
+                        },
+                        {
+                            "id": "CI2202"
+                        },
+                        {
+                            "id": "CI2216"
+                        },
+                        {
+                            "id": "CI3202"
+                        },
+                        {
+                            "id": "CI3400"
+                        }
+                    ],
+                    "tEquiv": "CI0200,CI0201,CI1201,CI1202,CI1216,CI1218,CI1220,CI1221,CI1230,CI1301,CI1305,CI1307,CI1311,CI2202,CI2216,CI3202,CI3400"
+                },
+                {
+                    "id_course": "MA0101",
+                    "name": "matemática general",
+                    "trucatedName": "matemática general",
+                    "credits": 2,
+                    "hours": 5,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "MA1102"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 1",
+            "courses": [
+                {
+                    "id_course": "CI1106",
+                    "name": "comunicación escrita",
+                    "trucatedName": "comunicación escrita",
+                    "credits": 2,
+                    "hours": 6,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CI1107"
+                        },
+                        {
+                            "id": "CS2101"
+                        },
+                        {
+                            "id": "CS3401"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CI1401"
+                        },
+                        {
+                            "id": "CI1403"
+                        }
+                    ],
+                    "tEquiv": "CI1401,CI1403"
+                },
+                {
+                    "id_course": "IC1400",
+                    "name": "fundamentos de organización de computadoras",
+                    "trucatedName": "fundamentos de organización de ...",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [],
+                    "co_requirements": [
+                        {
+                            "id": "MA1403"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC3101"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC2100"
+                        }
+                    ],
+                    "tEquiv": "IC2100"
+                },
+                {
+                    "id_course": "IC1802",
+                    "name": "introducción a la programación",
+                    "trucatedName": "introducción a la programación",
+                    "credits": 3,
+                    "hours": 4,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC2101"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC1800"
+                        }
+                    ],
+                    "tEquiv": "IC1800"
+                },
+                {
+                    "id_course": "IC1803",
+                    "name": "taller de programación",
+                    "trucatedName": "taller de programación",
+                    "credits": 3,
+                    "hours": 4,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC2101"
+                        },
+                        {
+                            "id": "IC3101"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC1801"
+                        }
+                    ],
+                    "tEquiv": "IC1801"
+                },
+                {
+                    "id_course": "MA1403",
+                    "name": "matemática discreta",
+                    "trucatedName": "matemática discreta",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC4301"
+                        },
+                        {
+                            "id": "MA1102"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA1111"
+                        },
+                        {
+                            "id": "CA1500"
+                        },
+                        {
+                            "id": "EM1601"
+                        },
+                        {
+                            "id": "MA1105"
+                        },
+                        {
+                            "id": "MA1402"
+                        }
+                    ],
+                    "tEquiv": "CA1111,CA1500,EM1601,MA1105,MA1402"
+                },
+                {
+                    "id_course": "SE1100",
+                    "name": "actividad cultural i",
+                    "trucatedName": "actividad cultural i",
+                    "credits": 0,
+                    "hours": 2,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        },
+                        {
+                            "id": "SE1400"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "SE1101"
+                        },
+                        {
+                            "id": "SE1102"
+                        },
+                        {
+                            "id": "SE1103"
+                        },
+                        {
+                            "id": "SE1104"
+                        },
+                        {
+                            "id": "SE1105"
+                        },
+                        {
+                            "id": "SE1106"
+                        },
+                        {
+                            "id": "SE1107"
+                        },
+                        {
+                            "id": "SE1108"
+                        },
+                        {
+                            "id": "SE1109"
+                        },
+                        {
+                            "id": "SE1110"
+                        },
+                        {
+                            "id": "SE1111"
+                        },
+                        {
+                            "id": "SE2101"
+                        },
+                        {
+                            "id": "SE2102"
+                        },
+                        {
+                            "id": "SE2103"
+                        },
+                        {
+                            "id": "SE2104"
+                        },
+                        {
+                            "id": "SE2105"
+                        },
+                        {
+                            "id": "SE2106"
+                        },
+                        {
+                            "id": "SE2107"
+                        },
+                        {
+                            "id": "SE2108"
+                        },
+                        {
+                            "id": "SE2109"
+                        },
+                        {
+                            "id": "SE2110"
+                        },
+                        {
+                            "id": "SE2111"
+                        }
+                    ],
+                    "tEquiv": "SE1101,SE1102,SE1103,SE1104,SE1105,SE1106,SE1107,SE1108,SE1109,SE1110,SE1111,SE2101,SE2102,SE2103,SE2104,SE2105,SE2106,SE2107,SE2108,SE2109,SE2110,SE2111"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 2",
+            "courses": [
+                {
+                    "id_course": "CI1107",
+                    "name": "comunicación oral",
+                    "trucatedName": "comunicación oral",
+                    "credits": 1,
+                    "hours": 3,
+                    "requirements": [
+                        {
+                            "id": "CI1106"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CS2101"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                },
+                {
+                    "id_course": "CI1230",
+                    "name": "inglés i",
+                    "trucatedName": "inglés i",
+                    "credits": 2,
+                    "hours": 6,
+                    "requirements": [
+                        {
+                            "id": "CI0200"
+                        },
+                        {
+                            "id": "CI0202"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CI1231"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CI1311"
+                        }
+                    ],
+                    "tEquiv": "CI1311"
+                },
+                {
+                    "id_course": "FH1000",
+                    "name": "centros de formación humanística",
+                    "trucatedName": "centros de formación humanístic...",
+                    "credits": 0,
+                    "hours": 2,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CS4402"
+                        },
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "FH0001"
+                        },
+                        {
+                            "id": "FH0002"
+                        },
+                        {
+                            "id": "FH0003"
+                        },
+                        {
+                            "id": "FH0004"
+                        },
+                        {
+                            "id": "FH0005"
+                        },
+                        {
+                            "id": "FH0006"
+                        },
+                        {
+                            "id": "FH0007"
+                        },
+                        {
+                            "id": "FH0008"
+                        },
+                        {
+                            "id": "FH0009"
+                        },
+                        {
+                            "id": "FH0010"
+                        },
+                        {
+                            "id": "FH0011"
+                        },
+                        {
+                            "id": "FH0012"
+                        },
+                        {
+                            "id": "FH0013"
+                        },
+                        {
+                            "id": "FH0014"
+                        },
+                        {
+                            "id": "FH0015"
+                        },
+                        {
+                            "id": "FH0016"
+                        },
+                        {
+                            "id": "FH0017"
+                        },
+                        {
+                            "id": "FH0018"
+                        },
+                        {
+                            "id": "FH0019"
+                        },
+                        {
+                            "id": "FH0020"
+                        },
+                        {
+                            "id": "FH0021"
+                        },
+                        {
+                            "id": "FH0022"
+                        },
+                        {
+                            "id": "FH0023"
+                        },
+                        {
+                            "id": "FH0024"
+                        },
+                        {
+                            "id": "FH0025"
+                        },
+                        {
+                            "id": "FH0026"
+                        },
+                        {
+                            "id": "FH0027"
+                        },
+                        {
+                            "id": "FH0028"
+                        },
+                        {
+                            "id": "FH0029"
+                        },
+                        {
+                            "id": "FH0030"
+                        },
+                        {
+                            "id": "FH0031"
+                        },
+                        {
+                            "id": "FH0032"
+                        },
+                        {
+                            "id": "FH0033"
+                        },
+                        {
+                            "id": "FH0034"
+                        },
+                        {
+                            "id": "FH0035"
+                        },
+                        {
+                            "id": "FH0036"
+                        },
+                        {
+                            "id": "FH0037"
+                        },
+                        {
+                            "id": "FH0038"
+                        },
+                        {
+                            "id": "FH0039"
+                        },
+                        {
+                            "id": "FH0040"
+                        },
+                        {
+                            "id": "FH0041"
+                        },
+                        {
+                            "id": "FH0042"
+                        },
+                        {
+                            "id": "FH0043"
+                        },
+                        {
+                            "id": "FH0044"
+                        },
+                        {
+                            "id": "FH0045"
+                        },
+                        {
+                            "id": "FH0046"
+                        },
+                        {
+                            "id": "FH0047"
+                        },
+                        {
+                            "id": "FH0048"
+                        },
+                        {
+                            "id": "FH0049"
+                        },
+                        {
+                            "id": "FH0050"
+                        },
+                        {
+                            "id": "FH0051"
+                        },
+                        {
+                            "id": "FH0052"
+                        },
+                        {
+                            "id": "FH0053"
+                        },
+                        {
+                            "id": "FH0054"
+                        },
+                        {
+                            "id": "FH0055"
+                        },
+                        {
+                            "id": "FH0056"
+                        },
+                        {
+                            "id": "FH0057"
+                        },
+                        {
+                            "id": "FH0058"
+                        },
+                        {
+                            "id": "FH0059"
+                        },
+                        {
+                            "id": "FH0060"
+                        },
+                        {
+                            "id": "FH0061"
+                        },
+                        {
+                            "id": "FH0062"
+                        },
+                        {
+                            "id": "FH0063"
+                        },
+                        {
+                            "id": "FH0064"
+                        },
+                        {
+                            "id": "FH0065"
+                        },
+                        {
+                            "id": "FH0066"
+                        },
+                        {
+                            "id": "FH0067"
+                        },
+                        {
+                            "id": "FH0068"
+                        },
+                        {
+                            "id": "FH0069"
+                        },
+                        {
+                            "id": "FH0070"
+                        },
+                        {
+                            "id": "FH0071"
+                        },
+                        {
+                            "id": "FH0072"
+                        },
+                        {
+                            "id": "FH0073"
+                        },
+                        {
+                            "id": "FH0074"
+                        },
+                        {
+                            "id": "FH0075"
+                        },
+                        {
+                            "id": "FH0076"
+                        },
+                        {
+                            "id": "FH0077"
+                        },
+                        {
+                            "id": "FH0078"
+                        },
+                        {
+                            "id": "FH0079"
+                        },
+                        {
+                            "id": "FH0080"
+                        },
+                        {
+                            "id": "FH0081"
+                        },
+                        {
+                            "id": "FH0082"
+                        },
+                        {
+                            "id": "FH0083"
+                        },
+                        {
+                            "id": "FH0084"
+                        },
+                        {
+                            "id": "FH0085"
+                        },
+                        {
+                            "id": "FH0086"
+                        },
+                        {
+                            "id": "FH0087"
+                        },
+                        {
+                            "id": "FH0088"
+                        },
+                        {
+                            "id": "FH0089"
+                        },
+                        {
+                            "id": "FH0090"
+                        },
+                        {
+                            "id": "FH0091"
+                        },
+                        {
+                            "id": "FH0092"
+                        },
+                        {
+                            "id": "FH0093"
+                        },
+                        {
+                            "id": "FH0094"
+                        },
+                        {
+                            "id": "FH0095"
+                        },
+                        {
+                            "id": "FH0096"
+                        },
+                        {
+                            "id": "FH0097"
+                        },
+                        {
+                            "id": "FH0098"
+                        },
+                        {
+                            "id": "FH0099"
+                        },
+                        {
+                            "id": "FH0100"
+                        },
+                        {
+                            "id": "FH0101"
+                        },
+                        {
+                            "id": "FH0102"
+                        },
+                        {
+                            "id": "FH0103"
+                        },
+                        {
+                            "id": "FH0104"
+                        },
+                        {
+                            "id": "FH0105"
+                        },
+                        {
+                            "id": "FH0106"
+                        },
+                        {
+                            "id": "FH0107"
+                        },
+                        {
+                            "id": "FH0108"
+                        },
+                        {
+                            "id": "FH0109"
+                        },
+                        {
+                            "id": "FH0110"
+                        },
+                        {
+                            "id": "FH0111"
+                        },
+                        {
+                            "id": "FH0112"
+                        },
+                        {
+                            "id": "FH0113"
+                        },
+                        {
+                            "id": "FH0114"
+                        },
+                        {
+                            "id": "FH0115"
+                        },
+                        {
+                            "id": "FH0116"
+                        },
+                        {
+                            "id": "FH0117"
+                        },
+                        {
+                            "id": "FH0118"
+                        },
+                        {
+                            "id": "FH0119"
+                        },
+                        {
+                            "id": "FH0120"
+                        },
+                        {
+                            "id": "FH0121"
+                        },
+                        {
+                            "id": "FH0122"
+                        },
+                        {
+                            "id": "FH0123"
+                        },
+                        {
+                            "id": "FH0124"
+                        },
+                        {
+                            "id": "FH0125"
+                        },
+                        {
+                            "id": "FH0126"
+                        },
+                        {
+                            "id": "FH0127"
+                        },
+                        {
+                            "id": "FH0128"
+                        },
+                        {
+                            "id": "FH0129"
+                        },
+                        {
+                            "id": "FH0130"
+                        },
+                        {
+                            "id": "FH0131"
+                        },
+                        {
+                            "id": "FH0132"
+                        },
+                        {
+                            "id": "FH0133"
+                        },
+                        {
+                            "id": "FH0134"
+                        },
+                        {
+                            "id": "FH0135"
+                        },
+                        {
+                            "id": "FH0136"
+                        },
+                        {
+                            "id": "FH0137"
+                        },
+                        {
+                            "id": "FH0138"
+                        },
+                        {
+                            "id": "FH0139"
+                        },
+                        {
+                            "id": "FH0140"
+                        },
+                        {
+                            "id": "FH0141"
+                        },
+                        {
+                            "id": "FH0142"
+                        },
+                        {
+                            "id": "FH0143"
+                        },
+                        {
+                            "id": "FH0144"
+                        },
+                        {
+                            "id": "FH0145"
+                        },
+                        {
+                            "id": "FH0146"
+                        },
+                        {
+                            "id": "FH0147"
+                        },
+                        {
+                            "id": "FH0148"
+                        },
+                        {
+                            "id": "FH0149"
+                        },
+                        {
+                            "id": "FH0150"
+                        },
+                        {
+                            "id": "FH0151"
+                        },
+                        {
+                            "id": "FH0152"
+                        },
+                        {
+                            "id": "FH0153"
+                        },
+                        {
+                            "id": "FH0154"
+                        },
+                        {
+                            "id": "FH0155"
+                        },
+                        {
+                            "id": "FH0156"
+                        },
+                        {
+                            "id": "FH0157"
+                        },
+                        {
+                            "id": "FH0158"
+                        },
+                        {
+                            "id": "FH0159"
+                        },
+                        {
+                            "id": "FH0160"
+                        },
+                        {
+                            "id": "FH0161"
+                        },
+                        {
+                            "id": "FH0162"
+                        },
+                        {
+                            "id": "FH0163"
+                        },
+                        {
+                            "id": "FH0164"
+                        },
+                        {
+                            "id": "FH0165"
+                        },
+                        {
+                            "id": "FH0166"
+                        },
+                        {
+                            "id": "FH0167"
+                        },
+                        {
+                            "id": "FH0168"
+                        },
+                        {
+                            "id": "FH0169"
+                        },
+                        {
+                            "id": "FH0170"
+                        },
+                        {
+                            "id": "FH0171"
+                        },
+                        {
+                            "id": "FH0172"
+                        },
+                        {
+                            "id": "FH0173"
+                        },
+                        {
+                            "id": "FH0174"
+                        },
+                        {
+                            "id": "FH0175"
+                        },
+                        {
+                            "id": "FH0176"
+                        },
+                        {
+                            "id": "FH0177"
+                        },
+                        {
+                            "id": "FH0178"
+                        },
+                        {
+                            "id": "FH0179"
+                        },
+                        {
+                            "id": "FH0180"
+                        },
+                        {
+                            "id": "FH0181"
+                        },
+                        {
+                            "id": "FH0182"
+                        },
+                        {
+                            "id": "FH0183"
+                        },
+                        {
+                            "id": "FH0184"
+                        },
+                        {
+                            "id": "FH0185"
+                        },
+                        {
+                            "id": "FH0186"
+                        },
+                        {
+                            "id": "FH0187"
+                        },
+                        {
+                            "id": "FH0188"
+                        },
+                        {
+                            "id": "FH0189"
+                        },
+                        {
+                            "id": "FH0190"
+                        },
+                        {
+                            "id": "FH0191"
+                        },
+                        {
+                            "id": "FH0192"
+                        },
+                        {
+                            "id": "FH0193"
+                        },
+                        {
+                            "id": "FH0194"
+                        },
+                        {
+                            "id": "FH0195"
+                        },
+                        {
+                            "id": "FH0196"
+                        },
+                        {
+                            "id": "FH0197"
+                        },
+                        {
+                            "id": "FH0198"
+                        },
+                        {
+                            "id": "FH0199"
+                        },
+                        {
+                            "id": "FH0200"
+                        },
+                        {
+                            "id": "FH0201"
+                        },
+                        {
+                            "id": "FH0202"
+                        },
+                        {
+                            "id": "FH0203"
+                        },
+                        {
+                            "id": "FH0204"
+                        },
+                        {
+                            "id": "FH0205"
+                        },
+                        {
+                            "id": "FH0206"
+                        },
+                        {
+                            "id": "FH0207"
+                        },
+                        {
+                            "id": "FH0208"
+                        },
+                        {
+                            "id": "FH0209"
+                        },
+                        {
+                            "id": "FH0210"
+                        },
+                        {
+                            "id": "FH0211"
+                        },
+                        {
+                            "id": "FH0212"
+                        },
+                        {
+                            "id": "FH0213"
+                        },
+                        {
+                            "id": "FH0214"
+                        },
+                        {
+                            "id": "FH0215"
+                        },
+                        {
+                            "id": "FH0216"
+                        },
+                        {
+                            "id": "FH0217"
+                        },
+                        {
+                            "id": "FH0218"
+                        },
+                        {
+                            "id": "FH0219"
+                        },
+                        {
+                            "id": "FH0220"
+                        },
+                        {
+                            "id": "FH0221"
+                        },
+                        {
+                            "id": "FH0222"
+                        },
+                        {
+                            "id": "FH0223"
+                        },
+                        {
+                            "id": "FH0224"
+                        },
+                        {
+                            "id": "FH0225"
+                        },
+                        {
+                            "id": "FH0226"
+                        },
+                        {
+                            "id": "FH0227"
+                        },
+                        {
+                            "id": "FH0228"
+                        },
+                        {
+                            "id": "FH0229"
+                        },
+                        {
+                            "id": "FH0230"
+                        },
+                        {
+                            "id": "FH0231"
+                        },
+                        {
+                            "id": "FH0232"
+                        },
+                        {
+                            "id": "FH0233"
+                        },
+                        {
+                            "id": "FH0234"
+                        },
+                        {
+                            "id": "FH0235"
+                        },
+                        {
+                            "id": "FH0236"
+                        },
+                        {
+                            "id": "FH0237"
+                        },
+                        {
+                            "id": "FH0238"
+                        },
+                        {
+                            "id": "FH0239"
+                        },
+                        {
+                            "id": "FH0240"
+                        },
+                        {
+                            "id": "FH0241"
+                        },
+                        {
+                            "id": "FH0242"
+                        },
+                        {
+                            "id": "FH0243"
+                        },
+                        {
+                            "id": "FH0244"
+                        },
+                        {
+                            "id": "FH0245"
+                        },
+                        {
+                            "id": "FH0246"
+                        },
+                        {
+                            "id": "FH0247"
+                        },
+                        {
+                            "id": "FH0248"
+                        },
+                        {
+                            "id": "FH0249"
+                        },
+                        {
+                            "id": "FH0250"
+                        },
+                        {
+                            "id": "FH0251"
+                        },
+                        {
+                            "id": "FH0252"
+                        },
+                        {
+                            "id": "FH0253"
+                        },
+                        {
+                            "id": "FH0254"
+                        },
+                        {
+                            "id": "FH0255"
+                        },
+                        {
+                            "id": "FH0256"
+                        },
+                        {
+                            "id": "FH0257"
+                        },
+                        {
+                            "id": "FH0258"
+                        },
+                        {
+                            "id": "FH0259"
+                        },
+                        {
+                            "id": "FH0260"
+                        },
+                        {
+                            "id": "FH0261"
+                        },
+                        {
+                            "id": "FH0262"
+                        },
+                        {
+                            "id": "FH0263"
+                        },
+                        {
+                            "id": "FH0264"
+                        },
+                        {
+                            "id": "FH0265"
+                        },
+                        {
+                            "id": "FH0266"
+                        },
+                        {
+                            "id": "FH0267"
+                        },
+                        {
+                            "id": "FH0268"
+                        },
+                        {
+                            "id": "FH0269"
+                        },
+                        {
+                            "id": "FH0270"
+                        },
+                        {
+                            "id": "FH0271"
+                        },
+                        {
+                            "id": "FH0272"
+                        },
+                        {
+                            "id": "FH0273"
+                        }
+                    ],
+                    "tEquiv": "FH0001,FH0002,FH0003,FH0004,FH0005,FH0006,FH0007,FH0008,FH0009,FH0010,FH0011,FH0012,FH0013,FH0014,FH0015,FH0016,FH0017,FH0018,FH0019,FH0020,FH0021,FH0022,FH0023,FH0024,FH0025,FH0026,FH0027,FH0028,FH0029,FH0030,FH0031,FH0032,FH0033,FH0034,FH0035,FH0036,FH0037,FH0038,FH0039,FH0040,FH0041,FH0042,FH0043,FH0044,FH0045,FH0046,FH0047,FH0048,FH0049,FH0050,FH0051,FH0052,FH0053,FH0054,FH0055,FH0056,FH0057,FH0058,FH0059,FH0060,FH0061,FH0062,FH0063,FH0064,FH0065,FH0066,FH0067,FH0068,FH0069,FH0070,FH0071,FH0072,FH0073,FH0074,FH0075,FH0076,FH0077,FH0078,FH0079,FH0080,FH0081,FH0082,FH0083,FH0084,FH0085,FH0086,FH0087,FH0088,FH0089,FH0090,FH0091,FH0092,FH0093,FH0094,FH0095,FH0096,FH0097,FH0098,FH0099,FH0100,FH0101,FH0102,FH0103,FH0104,FH0105,FH0106,FH0107,FH0108,FH0109,FH0110,FH0111,FH0112,FH0113,FH0114,FH0115,FH0116,FH0117,FH0118,FH0119,FH0120,FH0121,FH0122,FH0123,FH0124,FH0125,FH0126,FH0127,FH0128,FH0129,FH0130,FH0131,FH0132,FH0133,FH0134,FH0135,FH0136,FH0137,FH0138,FH0139,FH0140,FH0141,FH0142,FH0143,FH0144,FH0145,FH0146,FH0147,FH0148,FH0149,FH0150,FH0151,FH0152,FH0153,FH0154,FH0155,FH0156,FH0157,FH0158,FH0159,FH0160,FH0161,FH0162,FH0163,FH0164,FH0165,FH0166,FH0167,FH0168,FH0169,FH0170,FH0171,FH0172,FH0173,FH0174,FH0175,FH0176,FH0177,FH0178,FH0179,FH0180,FH0181,FH0182,FH0183,FH0184,FH0185,FH0186,FH0187,FH0188,FH0189,FH0190,FH0191,FH0192,FH0193,FH0194,FH0195,FH0196,FH0197,FH0198,FH0199,FH0200,FH0201,FH0202,FH0203,FH0204,FH0205,FH0206,FH0207,FH0208,FH0209,FH0210,FH0211,FH0212,FH0213,FH0214,FH0215,FH0216,FH0217,FH0218,FH0219,FH0220,FH0221,FH0222,FH0223,FH0224,FH0225,FH0226,FH0227,FH0228,FH0229,FH0230,FH0231,FH0232,FH0233,FH0234,FH0235,FH0236,FH0237,FH0238,FH0239,FH0240,FH0241,FH0242,FH0243,FH0244,FH0245,FH0246,FH0247,FH0248,FH0249,FH0250,FH0251,FH0252,FH0253,FH0254,FH0255,FH0256,FH0257,FH0258,FH0259,FH0260,FH0261,FH0262,FH0263,FH0264,FH0265,FH0266,FH0267,FH0268,FH0269,FH0270,FH0271,FH0272,FH0273"
+                },
+                {
+                    "id_course": "IC2001",
+                    "name": "estructuras de datos",
+                    "trucatedName": "estructuras de datos",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [],
+                    "co_requirements": [
+                        {
+                            "id": "IC2101"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC3002"
+                        },
+                        {
+                            "id": "IC4301"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC2000"
+                        }
+                    ],
+                    "tEquiv": "IC2000"
+                },
+                {
+                    "id_course": "IC2101",
+                    "name": "programación orientada a objetos",
+                    "trucatedName": "programación orientada a objeto...",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC1802"
+                        },
+                        {
+                            "id": "IC1803"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                },
+                {
+                    "id_course": "IC3101",
+                    "name": "arquitectura de computadores",
+                    "trucatedName": "arquitectura de computadores",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC1400"
+                        },
+                        {
+                            "id": "IC1803"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC4700"
+                        },
+                        {
+                            "id": "IC6600"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA6403"
+                        }
+                    ],
+                    "tEquiv": "CA6403"
+                },
+                {
+                    "id_course": "MA1102",
+                    "name": "cálculo diferencial e integral",
+                    "trucatedName": "cálculo diferencial e integral",
+                    "credits": 4,
+                    "hours": 5,
+                    "requirements": [
+                        {
+                            "id": "MA0101"
+                        },
+                        {
+                            "id": "MA1403"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC3002"
+                        },
+                        {
+                            "id": "MA1103"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "MA1404"
+                        }
+                    ],
+                    "tEquiv": "MA1404"
+                },
+                {
+                    "id_course": "SE1200",
+                    "name": "actividad deportiva i",
+                    "trucatedName": "actividad deportiva i",
+                    "credits": 0,
+                    "hours": 2,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        },
+                        {
+                            "id": "SE1100"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "SE1201"
+                        },
+                        {
+                            "id": "SE1202"
+                        },
+                        {
+                            "id": "SE1203"
+                        },
+                        {
+                            "id": "SE1204"
+                        },
+                        {
+                            "id": "SE1205"
+                        },
+                        {
+                            "id": "SE1206"
+                        },
+                        {
+                            "id": "SE1207"
+                        },
+                        {
+                            "id": "SE1208"
+                        },
+                        {
+                            "id": "SE1209"
+                        },
+                        {
+                            "id": "SE1210"
+                        },
+                        {
+                            "id": "SE1211"
+                        },
+                        {
+                            "id": "SE1216"
+                        },
+                        {
+                            "id": "SE1217"
+                        },
+                        {
+                            "id": "SE1218"
+                        },
+                        {
+                            "id": "SE1219"
+                        },
+                        {
+                            "id": "SE1220"
+                        },
+                        {
+                            "id": "SE1221"
+                        },
+                        {
+                            "id": "SE1222"
+                        },
+                        {
+                            "id": "SE1223"
+                        },
+                        {
+                            "id": "SE2200"
+                        },
+                        {
+                            "id": "SE2201"
+                        },
+                        {
+                            "id": "SE2202"
+                        },
+                        {
+                            "id": "SE2203"
+                        },
+                        {
+                            "id": "SE2204"
+                        },
+                        {
+                            "id": "SE2205"
+                        },
+                        {
+                            "id": "SE2206"
+                        },
+                        {
+                            "id": "SE2207"
+                        },
+                        {
+                            "id": "SE2208"
+                        },
+                        {
+                            "id": "SE2209"
+                        },
+                        {
+                            "id": "SE2210"
+                        },
+                        {
+                            "id": "SE2218"
+                        },
+                        {
+                            "id": "SE2219"
+                        }
+                    ],
+                    "tEquiv": "SE1201,SE1202,SE1203,SE1204,SE1205,SE1206,SE1207,SE1208,SE1209,SE1210,SE1211,SE1216,SE1217,SE1218,SE1219,SE1220,SE1221,SE1222,SE1223,SE2200,SE2201,SE2202,SE2203,SE2204,SE2205,SE2206,SE2207,SE2208,SE2209,SE2210,SE2218,SE2219"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 3",
+            "courses": [
+                {
+                    "id_course": "CI1231",
+                    "name": "inglés ii",
+                    "trucatedName": "inglés ii",
+                    "credits": 2,
+                    "hours": 3,
+                    "requirements": [
+                        {
+                            "id": "CI1230"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [],
+                    "equivalent": [
+                        {
+                            "id": "CI1312"
+                        }
+                    ],
+                    "tEquiv": "CI1312"
+                },
+                {
+                    "id_course": "IC3002",
+                    "name": "análisis de algoritmos",
+                    "trucatedName": "análisis de algoritmos",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [
+                        {
+                            "id": "IC2001"
+                        },
+                        {
+                            "id": "MA1102"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC4700"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC3001"
+                        }
+                    ],
+                    "tEquiv": "IC3001"
+                },
+                {
+                    "id_course": "IC4301",
+                    "name": "bases de datos i",
+                    "trucatedName": "bases de datos i",
+                    "credits": 4,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC2001"
+                        }
+                    ],
+                    "co_requirements": [
+                        {
+                            "id": "MA1103"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC4302"
+                        },
+                        {
+                            "id": "IC5821"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC4300"
+                        }
+                    ],
+                    "tEquiv": "IC4300"
+                },
+                {
+                    "id_course": "IC5821",
+                    "name": "requerimientos de software",
+                    "trucatedName": "requerimientos de software",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [],
+                    "co_requirements": [
+                        {
+                            "id": "IC4301"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC4810"
+                        },
+                        {
+                            "id": "IC6821"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC5820"
+                        }
+                    ],
+                    "tEquiv": "IC5820"
+                },
+                {
+                    "id_course": "MA1103",
+                    "name": "cálculo y álgebra lineal",
+                    "trucatedName": "cálculo y álgebra lineal",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "MA1102"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "MA2404"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "MA2405"
+                        }
+                    ],
+                    "tEquiv": "MA2405"
+                },
+                {
+                    "id_course": "SE1400",
+                    "name": "actividad cultural-deportiva",
+                    "trucatedName": "actividad cultural-deportiva",
+                    "credits": 0,
+                    "hours": 2,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "SE1100"
+                        },
+                        {
+                            "id": "SE1101"
+                        },
+                        {
+                            "id": "SE1102"
+                        },
+                        {
+                            "id": "SE1103"
+                        },
+                        {
+                            "id": "SE1104"
+                        },
+                        {
+                            "id": "SE1105"
+                        },
+                        {
+                            "id": "SE1106"
+                        },
+                        {
+                            "id": "SE1107"
+                        },
+                        {
+                            "id": "SE1108"
+                        },
+                        {
+                            "id": "SE1109"
+                        },
+                        {
+                            "id": "SE1110"
+                        },
+                        {
+                            "id": "SE1111"
+                        },
+                        {
+                            "id": "SE1200"
+                        },
+                        {
+                            "id": "SE1201"
+                        },
+                        {
+                            "id": "SE1202"
+                        },
+                        {
+                            "id": "SE1203"
+                        },
+                        {
+                            "id": "SE1204"
+                        },
+                        {
+                            "id": "SE1205"
+                        },
+                        {
+                            "id": "SE1206"
+                        },
+                        {
+                            "id": "SE1207"
+                        },
+                        {
+                            "id": "SE1208"
+                        },
+                        {
+                            "id": "SE1209"
+                        },
+                        {
+                            "id": "SE1210"
+                        },
+                        {
+                            "id": "SE1211"
+                        },
+                        {
+                            "id": "SE1216"
+                        },
+                        {
+                            "id": "SE1218"
+                        },
+                        {
+                            "id": "SE1219"
+                        },
+                        {
+                            "id": "SE1220"
+                        },
+                        {
+                            "id": "SE1221"
+                        },
+                        {
+                            "id": "SE1222"
+                        },
+                        {
+                            "id": "SE1223"
+                        },
+                        {
+                            "id": "SE2100"
+                        },
+                        {
+                            "id": "SE2101"
+                        },
+                        {
+                            "id": "SE2102"
+                        },
+                        {
+                            "id": "SE2103"
+                        },
+                        {
+                            "id": "SE2104"
+                        },
+                        {
+                            "id": "SE2105"
+                        },
+                        {
+                            "id": "SE2106"
+                        },
+                        {
+                            "id": "SE2107"
+                        },
+                        {
+                            "id": "SE2108"
+                        },
+                        {
+                            "id": "SE2109"
+                        },
+                        {
+                            "id": "SE2110"
+                        },
+                        {
+                            "id": "SE2111"
+                        },
+                        {
+                            "id": "SE2201"
+                        },
+                        {
+                            "id": "SE2202"
+                        },
+                        {
+                            "id": "SE2203"
+                        },
+                        {
+                            "id": "SE2204"
+                        },
+                        {
+                            "id": "SE2205"
+                        },
+                        {
+                            "id": "SE2206"
+                        },
+                        {
+                            "id": "SE2207"
+                        },
+                        {
+                            "id": "SE2208"
+                        },
+                        {
+                            "id": "SE2209"
+                        },
+                        {
+                            "id": "SE2210"
+                        },
+                        {
+                            "id": "SE2218"
+                        },
+                        {
+                            "id": "SE2219"
+                        }
+                    ],
+                    "tEquiv": "SE1100,SE1101,SE1102,SE1103,SE1104,SE1105,SE1106,SE1107,SE1108,SE1109,SE1110,SE1111,SE1200,SE1201,SE1202,SE1203,SE1204,SE1205,SE1206,SE1207,SE1208,SE1209,SE1210,SE1211,SE1216,SE1218,SE1219,SE1220,SE1221,SE1222,SE1223,SE2100,SE2101,SE2102,SE2103,SE2104,SE2105,SE2106,SE2107,SE2108,SE2109,SE2110,SE2111,SE2201,SE2202,SE2203,SE2204,SE2205,SE2206,SE2207,SE2208,SE2209,SE2210,SE2218,SE2219"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 4",
+            "courses": [
+                {
+                    "id_course": "CS2101",
+                    "name": "ambiente humano",
+                    "trucatedName": "ambiente humano",
+                    "credits": 2,
+                    "hours": 6,
+                    "requirements": [
+                        {
+                            "id": "CI1107"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "AE4208"
+                        },
+                        {
+                            "id": "CS3401"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CS3103"
+                        }
+                    ],
+                    "tEquiv": "CS3103"
+                },
+                {
+                    "id_course": "IC4302",
+                    "name": "bases de datos ii",
+                    "trucatedName": "bases de datos ii",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC4301"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC7841"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "TI4601"
+                        }
+                    ],
+                    "tEquiv": "TI4601"
+                },
+                {
+                    "id_course": "IC4700",
+                    "name": "lenguajes de programación",
+                    "trucatedName": "lenguajes de programación",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC3002"
+                        },
+                        {
+                            "id": "IC3101"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC5701"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA4108"
+                        }
+                    ],
+                    "tEquiv": "CA4108"
+                },
+                {
+                    "id_course": "IC6821",
+                    "name": "diseño de software",
+                    "trucatedName": "diseño de software",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [
+                        {
+                            "id": "IC5821"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6831"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA6202"
+                        }
+                    ],
+                    "tEquiv": "CA6202"
+                },
+                {
+                    "id_course": "MA2404",
+                    "name": "probabilidades",
+                    "trucatedName": "probabilidades",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "MA1103"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6400"
+                        },
+                        {
+                            "id": "MA3405"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA3503"
+                        }
+                    ],
+                    "tEquiv": "CA3503"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 5",
+            "courses": [
+                {
+                    "id_course": "CS3401",
+                    "name": "seminario de estudios filosóficos históricos",
+                    "trucatedName": "seminario de estudios filosófic...",
+                    "credits": 2,
+                    "hours": 3,
+                    "requirements": [
+                        {
+                            "id": "CS2101"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "CS4402"
+                        },
+                        {
+                            "id": "IC7900"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CS5401"
+                        }
+                    ],
+                    "tEquiv": "CS5401"
+                },
+                {
+                    "id_course": "IC4810",
+                    "name": "administración de proyectos",
+                    "trucatedName": "administración de proyectos",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC5821"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6831"
+                        },
+                        {
+                            "id": "IC7900"
+                        },
+                        {
+                            "id": "IC8071"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA5200"
+                        }
+                    ],
+                    "tEquiv": "CA5200"
+                },
+                {
+                    "id_course": "IC5701",
+                    "name": "compiladores e interpretes",
+                    "trucatedName": "compiladores e interpretes",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC4700"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6200"
+                        },
+                        {
+                            "id": "IC6600"
+                        },
+                        {
+                            "id": "IC8071"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA5301"
+                        }
+                    ],
+                    "tEquiv": "CA5301"
+                },
+                {
+                    "id_course": "IC6831",
+                    "name": "aseguramiento de la calidad del software",
+                    "trucatedName": "aseguramiento de la calidad del...",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC6821"
+                        }
+                    ],
+                    "co_requirements": [
+                        {
+                            "id": "IC4810"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC7841"
+                        },
+                        {
+                            "id": "IC8071"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                },
+                {
+                    "id_course": "MA3405",
+                    "name": "estadística",
+                    "trucatedName": "estadística",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "MA2404"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6400"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA4502"
+                        }
+                    ],
+                    "tEquiv": "CA4502"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 6",
+            "courses": [
+                {
+                    "id_course": "CS4402",
+                    "name": "seminario de estudios costarricenses",
+                    "trucatedName": "seminario de estudios costarric...",
+                    "credits": 2,
+                    "hours": 3,
+                    "requirements": [
+                        {
+                            "id": "CS3401"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [],
+                    "equivalent": [
+                        {
+                            "id": "CS6402"
+                        }
+                    ],
+                    "tEquiv": "CS6402"
+                },
+                {
+                    "id_course": "IC4003",
+                    "name": "electiva i",
+                    "trucatedName": "electiva i",
+                    "credits": 3,
+                    "hours": 4,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA2102"
+                        },
+                        {
+                            "id": "CA2501"
+                        },
+                        {
+                            "id": "CA3104"
+                        },
+                        {
+                            "id": "CA4403"
+                        },
+                        {
+                            "id": "CA5025"
+                        },
+                        {
+                            "id": "CA6304"
+                        },
+                        {
+                            "id": "CA8207"
+                        },
+                        {
+                            "id": "CA8306"
+                        },
+                        {
+                            "id": "CA8329"
+                        },
+                        {
+                            "id": "IC4000"
+                        },
+                        {
+                            "id": "IC4001"
+                        },
+                        {
+                            "id": "IC4002"
+                        },
+                        {
+                            "id": "IC7000"
+                        },
+                        {
+                            "id": "IC8001"
+                        },
+                        {
+                            "id": "IC8002"
+                        },
+                        {
+                            "id": "IC8003"
+                        },
+                        {
+                            "id": "IC8004"
+                        },
+                        {
+                            "id": "IC8005"
+                        },
+                        {
+                            "id": "IC8006"
+                        },
+                        {
+                            "id": "IC8007"
+                        },
+                        {
+                            "id": "IC8009"
+                        },
+                        {
+                            "id": "IC8010"
+                        },
+                        {
+                            "id": "IC8011"
+                        },
+                        {
+                            "id": "IC8012"
+                        },
+                        {
+                            "id": "IC8013"
+                        },
+                        {
+                            "id": "IC8014"
+                        },
+                        {
+                            "id": "IC8015"
+                        },
+                        {
+                            "id": "IC8016"
+                        },
+                        {
+                            "id": "IC8017"
+                        },
+                        {
+                            "id": "IC8018"
+                        },
+                        {
+                            "id": "IC8019"
+                        },
+                        {
+                            "id": "IC8020"
+                        },
+                        {
+                            "id": "IC8021"
+                        },
+                        {
+                            "id": "IC8022"
+                        },
+                        {
+                            "id": "IC8023"
+                        },
+                        {
+                            "id": "IC8024"
+                        },
+                        {
+                            "id": "IC8025"
+                        },
+                        {
+                            "id": "IC8026"
+                        },
+                        {
+                            "id": "IC8027"
+                        },
+                        {
+                            "id": "IC8028"
+                        },
+                        {
+                            "id": "IC8029"
+                        },
+                        {
+                            "id": "IC8030"
+                        },
+                        {
+                            "id": "IC8031"
+                        },
+                        {
+                            "id": "IC8032"
+                        },
+                        {
+                            "id": "IC8033"
+                        },
+                        {
+                            "id": "IC8034"
+                        },
+                        {
+                            "id": "IC8035"
+                        },
+                        {
+                            "id": "IC8036"
+                        },
+                        {
+                            "id": "IC8037"
+                        },
+                        {
+                            "id": "IC8038"
+                        },
+                        {
+                            "id": "IC8039"
+                        },
+                        {
+                            "id": "IC8040"
+                        },
+                        {
+                            "id": "IC8041"
+                        },
+                        {
+                            "id": "IC8042"
+                        },
+                        {
+                            "id": "IC8043"
+                        },
+                        {
+                            "id": "IC8044"
+                        },
+                        {
+                            "id": "IC8045"
+                        },
+                        {
+                            "id": "IC8046"
+                        },
+                        {
+                            "id": "IC8047"
+                        },
+                        {
+                            "id": "IC8048"
+                        },
+                        {
+                            "id": "IC8049"
+                        },
+                        {
+                            "id": "IC8050"
+                        },
+                        {
+                            "id": "IC8051"
+                        },
+                        {
+                            "id": "IC8052"
+                        },
+                        {
+                            "id": "IC8053"
+                        },
+                        {
+                            "id": "IC8054"
+                        },
+                        {
+                            "id": "IC8055"
+                        },
+                        {
+                            "id": "IC8056"
+                        },
+                        {
+                            "id": "IC8057"
+                        },
+                        {
+                            "id": "IC8058"
+                        },
+                        {
+                            "id": "IC8059"
+                        },
+                        {
+                            "id": "IC8060"
+                        },
+                        {
+                            "id": "IC8061"
+                        },
+                        {
+                            "id": "IC8062"
+                        },
+                        {
+                            "id": "IC8063"
+                        },
+                        {
+                            "id": "IC8064"
+                        },
+                        {
+                            "id": "IC8065"
+                        },
+                        {
+                            "id": "IC8066"
+                        },
+                        {
+                            "id": "IC8067"
+                        },
+                        {
+                            "id": "IC8068"
+                        },
+                        {
+                            "id": "IC8069"
+                        },
+                        {
+                            "id": "IC8070"
+                        },
+                        {
+                            "id": "IC8072"
+                        },
+                        {
+                            "id": "IC8073"
+                        },
+                        {
+                            "id": "IC8074"
+                        },
+                        {
+                            "id": "IC8075"
+                        },
+                        {
+                            "id": "IC8076"
+                        },
+                        {
+                            "id": "IC8077"
+                        },
+                        {
+                            "id": "IC8078"
+                        },
+                        {
+                            "id": "IC8079"
+                        },
+                        {
+                            "id": "ID5402"
+                        },
+                        {
+                            "id": "ID5403"
+                        }
+                    ],
+                    "tEquiv": "CA2102,CA2501,CA3104,CA4403,CA5025,CA6304,CA8207,CA8306,CA8329,IC4000,IC4001,IC4002,IC7000,IC8001,IC8002,IC8003,IC8004,IC8005,IC8006,IC8007,IC8009,IC8010,IC8011,IC8012,IC8013,IC8014,IC8015,IC8016,IC8017,IC8018,IC8019,IC8020,IC8021,IC8022,IC8023,IC8024,IC8025,IC8026,IC8027,IC8028,IC8029,IC8030,IC8031,IC8032,IC8033,IC8034,IC8035,IC8036,IC8037,IC8038,IC8039,IC8040,IC8041,IC8042,IC8043,IC8044,IC8045,IC8046,IC8047,IC8048,IC8049,IC8050,IC8051,IC8052,IC8053,IC8054,IC8055,IC8056,IC8057,IC8058,IC8059,IC8060,IC8061,IC8062,IC8063,IC8064,IC8065,IC8066,IC8067,IC8068,IC8069,IC8070,IC8072,IC8073,IC8074,IC8075,IC8076,IC8077,IC8078,IC8079,ID5402,ID5403"
+                },
+                {
+                    "id_course": "IC6400",
+                    "name": "investigación de operaciones",
+                    "trucatedName": "investigación de operaciones",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "MA3405"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC6200"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA3504"
+                        },
+                        {
+                            "id": "CA4505"
+                        }
+                    ],
+                    "tEquiv": "CA3504,CA4505"
+                },
+                {
+                    "id_course": "IC6600",
+                    "name": "principios de sistemas operativos",
+                    "trucatedName": "principios de sistemas operativ...",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC5701"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC7602"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA6302"
+                        }
+                    ],
+                    "tEquiv": "CA6302"
+                },
+                {
+                    "id_course": "IC7900",
+                    "name": "computación y sociedad",
+                    "trucatedName": "computación y sociedad",
+                    "credits": 2,
+                    "hours": 7,
+                    "requirements": [
+                        {
+                            "id": "IC4810"
+                        }
+                    ],
+                    "co_requirements": [
+                        {
+                            "id": "CS4402"
+                        }
+                    ],
+                    "required_by": [],
+                    "equivalent": [
+                        {
+                            "id": "CA8000"
+                        }
+                    ],
+                    "tEquiv": "CA8000"
+                },
+                {
+                    "id_course": "IC8071",
+                    "name": "seguridad del software",
+                    "trucatedName": "seguridad del software",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC4810"
+                        },
+                        {
+                            "id": "IC6831"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC7841"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 7",
+            "courses": [
+                {
+                    "id_course": "AE4208",
+                    "name": "desarrollo de emprendedores",
+                    "trucatedName": "desarrollo de emprendedores",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [],
+                    "co_requirements": [
+                        {
+                            "id": "IC7841"
+                        }
+                    ],
+                    "required_by": [
+                        {
+                            "id": "IC4810"
+                        },
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "AE3201"
+                        },
+                        {
+                            "id": "AE4206"
+                        }
+                    ],
+                    "tEquiv": "AE3201,AE4206"
+                },
+                {
+                    "id_course": "IC5001",
+                    "name": "electiva ii",
+                    "trucatedName": "electiva ii",
+                    "credits": 3,
+                    "hours": 4,
+                    "requirements": [],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "CA2102"
+                        },
+                        {
+                            "id": "CA2501"
+                        },
+                        {
+                            "id": "CA3104"
+                        },
+                        {
+                            "id": "CA3401"
+                        },
+                        {
+                            "id": "CA4403"
+                        },
+                        {
+                            "id": "CA5025"
+                        },
+                        {
+                            "id": "CA6304"
+                        },
+                        {
+                            "id": "CA8207"
+                        },
+                        {
+                            "id": "CA8306"
+                        },
+                        {
+                            "id": "CA8329"
+                        },
+                        {
+                            "id": "IC4000"
+                        },
+                        {
+                            "id": "IC4001"
+                        },
+                        {
+                            "id": "IC4002"
+                        },
+                        {
+                            "id": "IC7000"
+                        },
+                        {
+                            "id": "IC8001"
+                        },
+                        {
+                            "id": "IC8002"
+                        },
+                        {
+                            "id": "IC8003"
+                        },
+                        {
+                            "id": "IC8004"
+                        },
+                        {
+                            "id": "IC8005"
+                        },
+                        {
+                            "id": "IC8006"
+                        },
+                        {
+                            "id": "IC8007"
+                        },
+                        {
+                            "id": "IC8009"
+                        },
+                        {
+                            "id": "IC8010"
+                        },
+                        {
+                            "id": "IC8011"
+                        },
+                        {
+                            "id": "IC8012"
+                        },
+                        {
+                            "id": "IC8013"
+                        },
+                        {
+                            "id": "IC8014"
+                        },
+                        {
+                            "id": "IC8015"
+                        },
+                        {
+                            "id": "IC8016"
+                        },
+                        {
+                            "id": "IC8017"
+                        },
+                        {
+                            "id": "IC8018"
+                        },
+                        {
+                            "id": "IC8019"
+                        },
+                        {
+                            "id": "IC8020"
+                        },
+                        {
+                            "id": "IC8021"
+                        },
+                        {
+                            "id": "IC8022"
+                        },
+                        {
+                            "id": "IC8023"
+                        },
+                        {
+                            "id": "IC8024"
+                        },
+                        {
+                            "id": "IC8025"
+                        },
+                        {
+                            "id": "IC8026"
+                        },
+                        {
+                            "id": "IC8027"
+                        },
+                        {
+                            "id": "IC8028"
+                        },
+                        {
+                            "id": "IC8029"
+                        },
+                        {
+                            "id": "IC8030"
+                        },
+                        {
+                            "id": "IC8031"
+                        },
+                        {
+                            "id": "IC8032"
+                        },
+                        {
+                            "id": "IC8033"
+                        },
+                        {
+                            "id": "IC8034"
+                        },
+                        {
+                            "id": "IC8035"
+                        },
+                        {
+                            "id": "IC8036"
+                        },
+                        {
+                            "id": "IC8037"
+                        },
+                        {
+                            "id": "IC8038"
+                        },
+                        {
+                            "id": "IC8039"
+                        },
+                        {
+                            "id": "IC8040"
+                        },
+                        {
+                            "id": "IC8041"
+                        },
+                        {
+                            "id": "IC8042"
+                        },
+                        {
+                            "id": "IC8043"
+                        },
+                        {
+                            "id": "IC8044"
+                        },
+                        {
+                            "id": "IC8045"
+                        },
+                        {
+                            "id": "IC8046"
+                        },
+                        {
+                            "id": "IC8047"
+                        },
+                        {
+                            "id": "IC8048"
+                        },
+                        {
+                            "id": "IC8049"
+                        },
+                        {
+                            "id": "IC8050"
+                        },
+                        {
+                            "id": "IC8051"
+                        },
+                        {
+                            "id": "IC8052"
+                        },
+                        {
+                            "id": "IC8053"
+                        },
+                        {
+                            "id": "IC8054"
+                        },
+                        {
+                            "id": "IC8055"
+                        },
+                        {
+                            "id": "IC8056"
+                        },
+                        {
+                            "id": "IC8057"
+                        },
+                        {
+                            "id": "IC8058"
+                        },
+                        {
+                            "id": "IC8059"
+                        },
+                        {
+                            "id": "IC8060"
+                        },
+                        {
+                            "id": "IC8061"
+                        },
+                        {
+                            "id": "IC8062"
+                        },
+                        {
+                            "id": "IC8063"
+                        },
+                        {
+                            "id": "IC8064"
+                        },
+                        {
+                            "id": "IC8065"
+                        },
+                        {
+                            "id": "IC8066"
+                        },
+                        {
+                            "id": "IC8067"
+                        },
+                        {
+                            "id": "IC8068"
+                        },
+                        {
+                            "id": "IC8069"
+                        },
+                        {
+                            "id": "IC8070"
+                        },
+                        {
+                            "id": "IC8072"
+                        },
+                        {
+                            "id": "IC8073"
+                        },
+                        {
+                            "id": "IC8074"
+                        },
+                        {
+                            "id": "IC8075"
+                        },
+                        {
+                            "id": "IC8076"
+                        },
+                        {
+                            "id": "IC8077"
+                        },
+                        {
+                            "id": "IC8078"
+                        },
+                        {
+                            "id": "IC8079"
+                        },
+                        {
+                            "id": "ID5402"
+                        },
+                        {
+                            "id": "ID5403"
+                        }
+                    ],
+                    "tEquiv": "CA2102,CA2501,CA3104,CA3401,CA4403,CA5025,CA6304,CA8207,CA8306,CA8329,IC4000,IC4001,IC4002,IC7000,IC8001,IC8002,IC8003,IC8004,IC8005,IC8006,IC8007,IC8009,IC8010,IC8011,IC8012,IC8013,IC8014,IC8015,IC8016,IC8017,IC8018,IC8019,IC8020,IC8021,IC8022,IC8023,IC8024,IC8025,IC8026,IC8027,IC8028,IC8029,IC8030,IC8031,IC8032,IC8033,IC8034,IC8035,IC8036,IC8037,IC8038,IC8039,IC8040,IC8041,IC8042,IC8043,IC8044,IC8045,IC8046,IC8047,IC8048,IC8049,IC8050,IC8051,IC8052,IC8053,IC8054,IC8055,IC8056,IC8057,IC8058,IC8059,IC8060,IC8061,IC8062,IC8063,IC8064,IC8065,IC8066,IC8067,IC8068,IC8069,IC8070,IC8072,IC8073,IC8074,IC8075,IC8076,IC8077,IC8078,IC8079,ID5402,ID5403"
+                },
+                {
+                    "id_course": "IC6200",
+                    "name": "inteligencia artificial",
+                    "trucatedName": "inteligencia artificial",
+                    "credits": 4,
+                    "hours": 4,
+                    "requirements": [
+                        {
+                            "id": "IC5701"
+                        },
+                        {
+                            "id": "IC6400"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "No hay materias equivalentes en el plan"
+                        }
+                    ],
+                    "tEquiv": "No hay materias equivalentes en el plan"
+                },
+                {
+                    "id_course": "IC7602",
+                    "name": "redes",
+                    "trucatedName": "redes",
+                    "credits": 4,
+                    "hours": 12,
+                    "requirements": [
+                        {
+                            "id": "IC6600"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC7601"
+                        }
+                    ],
+                    "tEquiv": "IC7601"
+                },
+                {
+                    "id_course": "IC7841",
+                    "name": "proyecto de ingeniería de software",
+                    "trucatedName": "proyecto de ingeniería de softw...",
+                    "credits": 3,
+                    "hours": 9,
+                    "requirements": [
+                        {
+                            "id": "IC4302"
+                        },
+                        {
+                            "id": "IC6831"
+                        },
+                        {
+                            "id": "IC8071"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [
+                        {
+                            "id": "IC8842"
+                        }
+                    ],
+                    "equivalent": [
+                        {
+                            "id": "IC7840"
+                        }
+                    ],
+                    "tEquiv": "IC7840"
+                }
+            ]
+        },
+        {
+            "id": "Semestre 8",
+            "courses": [
+                {
+                    "id_course": "IC8842",
+                    "name": "práctica profesional",
+                    "trucatedName": "práctica profesional",
+                    "credits": 12,
+                    "hours": 40,
+                    "requirements": [
+                        {
+                            "id": "AE4208"
+                        },
+                        {
+                            "id": "FH1000"
+                        },
+                        {
+                            "id": "IC4003"
+                        },
+                        {
+                            "id": "IC5001"
+                        },
+                        {
+                            "id": "IC6200"
+                        },
+                        {
+                            "id": "IC7602"
+                        },
+                        {
+                            "id": "IC7841"
+                        },
+                        {
+                            "id": "SE1100"
+                        },
+                        {
+                            "id": "SE1200"
+                        },
+                        {
+                            "id": "SE1400"
+                        }
+                    ],
+                    "co_requirements": [],
+                    "required_by": [],
+                    "equivalent": [
+                        {
+                            "id": "IC8841"
+                        }
+                    ],
+                    "tEquiv": "IC8841"
+                }
+            ]
+        }
+    ]
+}
