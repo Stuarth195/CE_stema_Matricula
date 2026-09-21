@@ -1,0 +1,10 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define MAX_LINE_LENGTH 2048
+#define MAX_CURSOS 512
+#define MAX_GRUPOS 16
+#define CSV_FIELD_COUNT 14
+#define CSV_FIELD_SIZE 64
+
+#endif

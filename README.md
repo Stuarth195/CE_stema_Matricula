@@ -28,6 +28,9 @@ Desarrollar un sistema capaz de procesar información académica para facilitar 
 
 El proyecto se encuentra organizado separando el código fuente, archivos de cabecera, datos de entrada y resultados generados.
 
+### Correr con:
+```gcc main.c -o main && ./main ./data/Horario_Estudiante_CE.csv```
+
 ### Estructura de archivos
 
 ```text
