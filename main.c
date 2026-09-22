@@ -5,6 +5,7 @@
 #include "constants.h"
 #include "consultant.h"
 #include "Filter.h" 
+#include "Exportar.h"
 
 int main(int argc, char *argv[]) {
     // Pedimos el CSV de cursos Y el carné del estudiante en la terminal
@@ -58,7 +59,9 @@ int main(int argc, char *argv[]) {
     Curso cursos_finales[MAX_CURSOS];
     int total_finales = 0;
     filtrar_por_correquisitos(cursos_pre_filtrados, total_pre_filtrados, &mi_estudiante, cursos_finales, &total_finales);
-
+    marcar_matriculables(catalogo, (int)count, cursos_finales, total_finales);
+    exportar_catalogo_json("catalogo_salida.json", catalogo, (int)count);
+    printf("\nCatalogo exportado a catalogo_salida.json\n");
     // 5. Mostrar la lista definitiva desglosada
     printf("\n======================================================\n");
     printf("      CURSOS MATRICULABLES FINALES (%d)\n", total_finales);

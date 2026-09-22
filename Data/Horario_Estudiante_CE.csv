@@ -5,18 +5,18 @@ CE1103,Algoritmos y estructuras de datos I,3,4,JUE,09:30,11:20,MAR,09:30,11:20,C
 CE1103,Algoritmos y estructuras de datos I,2,4,JUE,15:00,16:50,MAR,15:00,16:50,CE1101,CE1104,MA1403,Null
 CE1103,Algoritmos y estructuras de datos I,1,4,MIE,17:00,18:50,VIE,17:00,18:50,CE1101,CE1104,MA1403,Null
 CE1104,Fundamentos de sistemas computacionales,1,3,JUE,07:30,09:20,MAR,07:30,09:20,Null,0,0,CE1101
-CE1105,Principios de modelado en Ingenieroa,3,3,JUE,19:00,20:50,MAR,19:00,20:50,CE1104,0,0,Null
-CE1105,Principios de modelado en Ingenieroa,1,3,JUE,17:00,18:50,MAR,17:00,18:50,CE1104,0,0,Null
-CE1105,Principios de modelado en Ingenieroa,2,3,MIE,17:00,18:50,VIE,17:00,18:50,CE1104,0,0,Null
+CE1105,Principios de modelado en Ingenieria,3,3,JUE,19:00,20:50,MAR,19:00,20:50,CE1104,0,0,Null
+CE1105,Principios de modelado en Ingenieria,1,3,JUE,17:00,18:50,MAR,17:00,18:50,CE1104,0,0,Null
+CE1105,Principios de modelado en Ingenieria,2,3,MIE,17:00,18:50,VIE,17:00,18:50,CE1104,0,0,Null
 CE1106,Paradigmas de programacion,1,3,MIE,09:30,11:20,VIE,09:30,11:20,CE2103,0,0,Null
 CE1106,Paradigmas de programacion,2,3,JUE,17:00,18:50,MAR,17:00,18:50,CE2103,0,0,Null
 CE2103,Algoritmos y estructuras de datos II,1,4,JUE,07:30,09:20,MAR,07:30,09:20,CE1103,CE1105,0,Null
-CE2201,Laboratorio de circuitos eloctricos,1,1,LUN,09:30,11:20,,,,FI1202,0,0,Null
-CE2201,Laboratorio de circuitos eloctricos,2,1,LUN,07:30,09:20,,,,FI1202,0,0,Null
-CI1407,Habilidades de comunicacion en Ingenieroa,1,2,LUN,09:30,12:20,,,,Null,0,0,Null
-CI1407,Habilidades de comunicacion en Ingenieroa,3,2,MAR,13:00,15:50,,,,Null,0,0,Null
-CI1407,Habilidades de comunicacion en Ingenieroa,2,2,JUE,13:00,15:50,,,,Null,0,0,Null
-CI1407,Habilidades de comunicacion en Ingenieroa,4,2,VIE,07:30,10:20,,,,Null,0,0,Null
+CE2201,Laboratorio de circuitos electricos,1,1,LUN,09:30,11:20,,,,FI1202,0,0,Null
+CE2201,Laboratorio de circuitos electricos,2,1,LUN,07:30,09:20,,,,FI1202,0,0,Null
+CI1407,Habilidades de comunicacion en Ingenieria,1,2,LUN,09:30,12:20,,,,Null,0,0,Null
+CI1407,Habilidades de comunicacion en Ingenieria,3,2,MAR,13:00,15:50,,,,Null,0,0,Null
+CI1407,Habilidades de comunicacion en Ingenieria,2,2,JUE,13:00,15:50,,,,Null,0,0,Null
+CI1407,Habilidades de comunicacion en Ingenieria,4,2,VIE,07:30,10:20,,,,Null,0,0,Null
 CS1502,Introduccion a la tocnica ciencia y tecnologoa,2,1,MIE,09:30,11:20,,,,Null,0,0,Null
 CS1502,Introduccion a la tocnica ciencia y tecnologoa,3,1,MIE,17:00,18:50,,,,Null,0,0,Null
 CS1502,Introduccion a la tocnica ciencia y tecnologoa,4,1,MAR,15:00,16:50,,,,Null,0,0,Null
@@ -30,14 +30,14 @@ CS2101,Ambiente humano,2,2,MAR,09:30,12:20,,,,Null,0,0,Null
 CS2101,Ambiente humano,6,2,LUN,07:30,10:20,,,,Null,0,0,Null
 CS2101,Ambiente humano,7,2,LUN,18:00,20:50,,,,Null,0,0,Null
 CS2101,Ambiente humano,8,2,MAR,18:00,20:50,,,,Null,0,0,Null
-EL2113,Circuitos eloctricos en corriente continua,4,4,LUN,07:30,09:20,MIE,07:30,09:20,FI1101,MA1102,0,Null
-EL2113,Circuitos eloctricos en corriente continua,2,4,JUE,09:30,11:20,MAR,09:30,11:20,FI1101,MA1102,0,Null
-EL2113,Circuitos eloctricos en corriente continua,3,4,LUN,07:30,11:20,,,,FI1101,MA1102,0,Null
-EL2113,Circuitos eloctricos en corriente continua,1,4,MIE,09:30,11:20,VIE,09:30,11:20,FI1101,MA1102,0,Null
-EL2114,Circuitos eloctricos en corriente alterna,1,4,MIE,17:00,18:50,VIE,17:00,18:50,EL2113,0,0,EL2207
-EL2114,Circuitos eloctricos en corriente alterna,4,4,JUE,17:00,18:50,MAR,17:00,18:50,EL2113,0,0,EL2207
-EL2114,Circuitos eloctricos en corriente alterna,2,4,JUE,09:30,11:20,MAR,09:30,11:20,EL2113,0,0,EL2207
-EL2114,Circuitos eloctricos en corriente alterna,3,4,MIE,07:30,09:20,VIE,07:30,09:20,EL2113,0,0,EL2207
+EL2113,Circuitos electricos en corriente continua,4,4,LUN,07:30,09:20,MIE,07:30,09:20,FI1101,MA1102,0,Null
+EL2113,Circuitos electricos en corriente continua,2,4,JUE,09:30,11:20,MAR,09:30,11:20,FI1101,MA1102,0,Null
+EL2113,Circuitos electricos en corriente continua,3,4,LUN,07:30,11:20,,,,FI1101,MA1102,0,Null
+EL2113,Circuitos electricos en corriente continua,1,4,MIE,09:30,11:20,VIE,09:30,11:20,FI1101,MA1102,0,Null
+EL2114,Circuitos electricos en corriente alterna,1,4,MIE,17:00,18:50,VIE,17:00,18:50,EL2113,0,0,EL2207
+EL2114,Circuitos electricos en corriente alterna,4,4,JUE,17:00,18:50,MAR,17:00,18:50,EL2113,0,0,EL2207
+EL2114,Circuitos electricos en corriente alterna,2,4,JUE,09:30,11:20,MAR,09:30,11:20,EL2113,0,0,EL2207
+EL2114,Circuitos electricos en corriente alterna,3,4,MIE,07:30,09:20,VIE,07:30,09:20,EL2113,0,0,EL2207
 EL2207,Elementos activos,2,4,JUE,07:30,09:20,MAR,07:30,09:20,EL2113,0,0,Null
 EL2207,Elementos activos,4,4,MIE,17:00,18:50,VIE,09:30,11:20,EL2113,0,0,Null
 EL2207,Elementos activos,1,4,JUE,15:00,16:50,MAR,15:00,16:50,EL2113,0,0,Null
@@ -126,25 +126,25 @@ MA1102,Colculo diferencial e integral,1,4,JUE,07:30,09:20,MAR,07:30,10:20,MA0101
 MA1102,Colculo diferencial e integral,8,4,JUE,16:00,17:50,MAR,15:00,17:50,MA0101,0,0,Null
 MA1102,Colculo diferencial e integral,5,4,JUE,13:00,14:50,MAR,13:00,15:50,MA0101,0,0,Null
 MA1102,Colculo diferencial e integral,22,4,MIE,16:00,18:50,VIE,16:00,17:50,MA0101,0,0,Null
-MA1103,Colculo y olgebra lineal,11,4,MIE,07:30,09:20,VIE,07:30,09:20,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,9,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,7,4,JUE,16:00,17:50,MAR,16:00,17:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,18,4,SAB,07:30,11:20,,,,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,14,4,MIE,15:00,16:50,VIE,15:00,16:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,16,4,MIE,17:00,18:50,VIE,17:00,18:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,1,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,4,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,2,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,3,4,JUE,09:30,11:20,MAR,09:30,11:20,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,6,4,JUE,15:00,16:50,MAR,15:00,16:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,10,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,13,4,MIE,13:00,14:50,VIE,13:00,14:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,8,4,JUE,17:00,18:50,MAR,17:00,18:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,12,4,MIE,09:30,11:20,VIE,09:30,11:20,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,19,4,JUE,07:30,11:20,,,,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,5,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,17,4,MIE,18:00,19:50,VIE,18:00,19:50,MA1102,0,0,Null
-MA1103,Colculo y olgebra lineal,15,4,MIE,16:00,17:50,VIE,16:00,17:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,11,4,MIE,07:30,09:20,VIE,07:30,09:20,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,9,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,7,4,JUE,16:00,17:50,MAR,16:00,17:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,18,4,SAB,07:30,11:20,,,,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,14,4,MIE,15:00,16:50,VIE,15:00,16:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,16,4,MIE,17:00,18:50,VIE,17:00,18:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,1,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,4,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,2,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,3,4,JUE,09:30,11:20,MAR,09:30,11:20,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,6,4,JUE,15:00,16:50,MAR,15:00,16:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,10,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,13,4,MIE,13:00,14:50,VIE,13:00,14:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,8,4,JUE,17:00,18:50,MAR,17:00,18:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,12,4,MIE,09:30,11:20,VIE,09:30,11:20,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,19,4,JUE,07:30,11:20,,,,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,5,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,17,4,MIE,18:00,19:50,VIE,18:00,19:50,MA1102,0,0,Null
+MA1103,Colculo y algebra lineal,15,4,MIE,16:00,17:50,VIE,16:00,17:50,MA1102,0,0,Null
 MA1403,Matemotica discreta,6,4,MIE,07:30,09:20,VIE,07:30,09:20,Null,0,0,Null
 MA1403,Matemotica discreta,2,4,MIE,09:30,11:20,VIE,09:30,11:20,Null,0,0,Null
 MA1403,Matemotica discreta,5,4,JUE,15:00,16:50,MAR,15:00,16:50,Null,0,0,Null
@@ -161,26 +161,26 @@ MA2104,Colculo superior,3,4,MIE,15:00,16:50,VIE,15:00,16:50,MA1103,0,0,Null
 PI2609,Probabilidad y estadostica,2,2,MIE,13:00,15:50,,,,MA2104,0,0,Null
 PI2609,Probabilidad y estadostica,3,2,JUE,13:00,15:50,,,,MA2104,0,0,Null
 PI2609,Probabilidad y estadostica,1,2,LUN,07:30,10:20,,,,MA2104,0,0,Null
-QU1102,Laboratorio de quomica bosica I,2,1,MAR,09:30,11:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,3,1,MAR,13:00,14:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,11,1,JUE,13:00,14:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,8,1,MIE,15:00,16:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,15,1,VIE,13:00,14:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,4,1,MAR,15:00,16:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,5,1,MIE,07:30,09:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,6,1,MIE,09:30,11:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,7,1,MIE,13:00,14:50,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,9,1,JUE,07:30,09:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,10,1,JUE,09:30,11:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,1,1,MAR,07:30,09:20,,,,Null,0,0,QU1106
-QU1102,Laboratorio de quomica bosica I,13,1,VIE,07:30,09:20,,,,Null,0,0,QU1106
-QU1106,Quomica bosica I,2,3,JUE,07:30,09:20,MAR,07:30,09:20,Null,0,0,QU1102
-QU1106,Quomica bosica I,1,3,JUE,07:30,09:20,MAR,07:30,09:20,Null,0,0,QU1102
-QU1106,Quomica bosica I,3,3,JUE,09:30,11:20,MAR,09:30,11:20,Null,0,0,QU1102
-QU1106,Quomica bosica I,9,3,MIE,09:30,11:20,VIE,09:30,11:20,Null,0,0,QU1102
-QU1106,Quomica bosica I,7,3,JUE,15:00,16:50,MAR,15:00,16:50,Null,0,0,QU1102
-QU1106,Quomica bosica I,5,3,JUE,13:00,14:50,MAR,13:00,14:50,Null,0,0,QU1102
-QU1106,Quomica bosica I,11,3,MIE,13:00,14:50,VIE,13:00,14:50,Null,0,0,QU1102
+QU1102,Laboratorio de quimica basica I,2,1,MAR,09:30,11:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,3,1,MAR,13:00,14:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,11,1,JUE,13:00,14:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,8,1,MIE,15:00,16:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,15,1,VIE,13:00,14:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,4,1,MAR,15:00,16:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,5,1,MIE,07:30,09:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,6,1,MIE,09:30,11:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,7,1,MIE,13:00,14:50,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,9,1,JUE,07:30,09:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,10,1,JUE,09:30,11:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,1,1,MAR,07:30,09:20,,,,Null,0,0,QU1106
+QU1102,Laboratorio de quimica basica I,13,1,VIE,07:30,09:20,,,,Null,0,0,QU1106
+QU1106,quimica basica I,2,3,JUE,07:30,09:20,MAR,07:30,09:20,Null,0,0,QU1102
+QU1106,quimica basica I,1,3,JUE,07:30,09:20,MAR,07:30,09:20,Null,0,0,QU1102
+QU1106,quimica basica I,3,3,JUE,09:30,11:20,MAR,09:30,11:20,Null,0,0,QU1102
+QU1106,quimica basica I,9,3,MIE,09:30,11:20,VIE,09:30,11:20,Null,0,0,QU1102
+QU1106,quimica basica I,7,3,JUE,15:00,16:50,MAR,15:00,16:50,Null,0,0,QU1102
+QU1106,quimica basica I,5,3,JUE,13:00,14:50,MAR,13:00,14:50,Null,0,0,QU1102
+QU1106,quimica basica I,11,3,MIE,13:00,14:50,VIE,13:00,14:50,Null,0,0,QU1102
 SE1101,Artes dramoticas,1,0,LUN,09:30,11:20,,,,Null,Null,Null,Null
 SE1101,Artes dramoticas,1,0,LUN,09:30,11:20,,,,Null,Null,Null,Null
 SE1101,Artes dramoticas,2,0,MAR,17:00,18:50,,,,Null,Null,Null,Null
