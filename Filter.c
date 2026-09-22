@@ -2,18 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include "constants.h"
+#include "consultant.h"
+#include "Filter.h" 
 
-char ruta_Carpeta_estudiantes[256] = "Data\\Estudiantes";
 
-typedef struct {
-    char carnet[16];
-    char apellido1[32];
-    char apellido2[32];
-    char nombre1[32];
-    char nombre2[32];
-    char materias[128][16];
-    int  nmaterias;
-} Estudiante;
+char ruta_Carpeta_estudiantes[256] = "CE_stema_Matricula\\Data\\Estudiantes";
 
 
 void cargar_historial_estudiante(const char *carnet_input, Estudiante *est)
@@ -22,10 +15,11 @@ void cargar_historial_estudiante(const char *carnet_input, Estudiante *est)
     char linea[1024]; // ser guarda la linea del archivo scv 
     // 1. Copiar el carné a la estructura
     strncpy(est->carnet, carnet_input, sizeof(est->carnet) - 1);
+
     est->carnet[sizeof(est->carnet) - 1] = '\0'; 
     // 2. Arma la ruta completa del archivo CSV
     snprintf(ruta_archivo, sizeof(ruta_archivo), "%s\\%s.csv", ruta_Carpeta_estudiantes, carnet_input);
-
+    printf("Intentando abrir: %s\n", ruta_archivo);   // <-- agrega esto
     // 3. Abre el archivo CSV del estudiante co la ruta completa armada anteriormente
     FILE *archivo = fopen(ruta_archivo, "r");
     if (archivo == NULL) {
@@ -78,57 +72,93 @@ Estuadiante
         materias[128][16] // 128 materias, cada una con un máximo de 16 caracteres(codigo de la materia)
     }
 */
-
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Prubas 
-
-void imprimir_estudiante(const Estudiante *est)
-{
-    printf("\n========================================\n");
-    printf("         EXPEDIENTE DEL ESTUDIANTE      \n");
-    printf("========================================\n");
-    printf("Carnet:     %s\n", est->carnet);
-    printf("Apellidos:  %s %s\n", est->apellido1, est->apellido2);
-    printf("Nombres:    %s %s\n", est->nombre1, est->nombre2);
-    printf("----------------------------------------\n");
-    printf("Materias aprobadas (Total: %d):\n", est->nmaterias);
-    
+int estudiante_aprobo_materia(const Estudiante *est, const char *codigo_materia) {
     for (int i = 0; i < est->nmaterias; i++) {
-        printf(" [%d] -> %s\n", i + 1, est->materias[i]);
+        if (strcmp(est->materias[i], codigo_materia) == 0) {
+            return 1; 
+        }
     }
-    printf("========================================\n");
+    return 0; 
 }
 
-int main() {
-    // 1. Declaramos y creamos la variable de tipo Estudiante
-    Estudiante mi_estudiante;
+void filtrar_por_requisitos(const Curso *catalogo_completo, int total_cursos, const Estudiante *est, Curso *cursos_filtrados, int *total_filtrados) {
+    
+    *total_filtrados = 0; 
 
-    // 2. Llamamos a la función pasándole el carné y la dirección de la variable (&)
-    // El programa buscará automáticamente el archivo "Data\\Estudiantes\\2024154970.csv"
-    cargar_historial_estudiante("2024154970", &mi_estudiante);
+    for (int i = 0; i < total_cursos; i++) {
+        if (estudiante_aprobo_materia(est, catalogo_completo[i].codigo) == 1) {
+            continue; 
+        }
 
-    // 3. Opcional: Llamamos a la función de impresión para verificar que se guardó bien
-    imprimir_estudiante(&mi_estudiante);
+        int cumple_todos = 1; 
+        
+        for (int j = 0; j < catalogo_completo[i].nrequisitos; j++) {
+            if (estudiante_aprobo_materia(est, catalogo_completo[i].requisito[j]) == 0) {
+                cumple_todos = 0; 
+                break;            
+            }
+        }
 
-    return 0;
+        if (cumple_todos == 1) {
+            cursos_filtrados[*total_filtrados] = catalogo_completo[i];
+            (*total_filtrados)++; 
+        }
+    }
 }
+
+
+void filtrar_por_correquisitos(const Curso *cursos_pre_filtrados, int total_pre_filtrados, const Estudiante *est, Curso *cursos_finales, int *total_finales) {
+    
+    *total_finales = 0; // Empezamos la lista final vacía
+
+    // Recorremos la lista que ya pasó el filtro de requisitos normales
+    for (int i = 0; i < total_pre_filtrados; i++) {
+        const char *correq = cursos_pre_filtrados[i].correquisito;
+
+        // 1. Si la materia NO tiene correquisito, pasa automáticamente.
+        // Asumimos que un CSV vacío, "0" o "Null" significa que no hay correquisito.
+        if (correq[0] == '\0' || strcmp(correq, "0") == 0 || strcmp(correq, "Null") == 0) {
+            cursos_finales[*total_finales] = cursos_pre_filtrados[i];
+            (*total_finales)++;
+            continue; // Saltamos a la siguiente materia del ciclo
+        }
+
+        // 2. Si TIENE correquisito, verificamos si cumple la regla para no descartarla
+        int cumple_correq = 0; // 0 significa que por ahora está descartada
+
+        // Condición A: Revisamos si ya lo aprobó en el historial del estudiante
+        if (estudiante_aprobo_materia(est, correq) == 1) {
+            cumple_correq = 1; // Salvada: ya lo había pasado
+        } 
+        // Condición B: Revisamos si el correquisito está dentro de esta misma lista filtrada
+        else {
+            for (int j = 0; j < total_pre_filtrados; j++) {
+                if (strcmp(cursos_pre_filtrados[j].codigo, correq) == 0) {
+                    cumple_correq = 1; // Salvada: lo puede matricular este mismo semestre
+                    break; // Ya lo encontramos, no hace falta seguir buscando
+                }
+            }
+        }
+
+        // 3. Si cumplió alguna de las dos condiciones, la copiamos a la lista definitiva
+        if (cumple_correq == 1) {
+            cursos_finales[*total_finales] = cursos_pre_filtrados[i];
+            (*total_finales)++;
+        }
+        // Si cumple_correq sigue siendo 0, la materia simplemente no se copia (se elimina)
+    }
+}
+
+
+
+
+
+
+
+
+
