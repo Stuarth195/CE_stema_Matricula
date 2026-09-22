@@ -1,6 +1,6 @@
 #ifndef FILTER_H
 #define FILTER_H
-#include "consultant.h" // Para conocer la estructura Curso
+#include "consultant.h" 
 
 // Define la estructura Estudiante aquí (y bórrala de la línea 10 de Filter_3.c)
 typedef struct {

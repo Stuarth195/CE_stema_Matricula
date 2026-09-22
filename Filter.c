@@ -5,7 +5,7 @@
 #include "consultant.h"
 #include "Filter.h" 
 
-
+// Función auxiliar para extraer el carné del estudiante desde la ruta del archivo
 static void extraer_carnet_de_ruta(const char *ruta, char *carnet_out, size_t tam_out) {
     const char *ultimo_slash = strrchr(ruta, '\\');
     const char *ultimo_slash2 = strrchr(ruta, '/');
@@ -23,8 +23,7 @@ static void extraer_carnet_de_ruta(const char *ruta, char *carnet_out, size_t ta
         *punto = '\0';
     }
 }
-
-
+// Función para cargar el historial de materias aprobadas del estudiante desde un archivo CSV
 void cargar_historial_estudiante(const char *ruta_archivo_estudiante, Estudiante *est)
 {
     char linea[1024];
@@ -75,6 +74,7 @@ void cargar_historial_estudiante(const char *ruta_archivo_estudiante, Estudiante
 
     fclose(archivo);
 }
+// Función para imprimir la información del estudiante
 int estudiante_aprobo_materia(const Estudiante *est, const char *codigo_materia) {
     for (int i = 0; i < est->nmaterias; i++) {
         if (strcmp(est->materias[i], codigo_materia) == 0) {
@@ -83,7 +83,7 @@ int estudiante_aprobo_materia(const Estudiante *est, const char *codigo_materia)
     }
     return 0; 
 }
-
+ // Función para imprimir la información del estudiante
 void filtrar_por_requisitos(const Curso *catalogo_completo, int total_cursos, const Estudiante *est, Curso *cursos_filtrados, int *total_filtrados) {
     
     *total_filtrados = 0; 
@@ -108,8 +108,7 @@ void filtrar_por_requisitos(const Curso *catalogo_completo, int total_cursos, co
         }
     }
 }
-
-
+// Función para filtrar cursos por correquisitos
 void filtrar_por_correquisitos(const Curso *cursos_pre_filtrados, int total_pre_filtrados, const Estudiante *est, Curso *cursos_finales, int *total_finales) {
     
     *total_finales = 0; // Empezamos la lista final vacía
@@ -123,7 +122,7 @@ void filtrar_por_correquisitos(const Curso *cursos_pre_filtrados, int total_pre_
         if (correq[0] == '\0' || strcmp(correq, "0") == 0 || strcmp(correq, "Null") == 0) {
             cursos_finales[*total_finales] = cursos_pre_filtrados[i];
             (*total_finales)++;
-            continue; // Saltamos a la siguiente materia del ciclo
+            continue; 
         }
 
         // 2. Si TIENE correquisito, verificamos si cumple la regla para no descartarla
@@ -148,7 +147,7 @@ void filtrar_por_correquisitos(const Curso *cursos_pre_filtrados, int total_pre_
             cursos_finales[*total_finales] = cursos_pre_filtrados[i];
             (*total_finales)++;
         }
-        // Si cumple_correq sigue siendo 0, la materia simplemente no se copia (se elimina)
+       
     }
 }
 
