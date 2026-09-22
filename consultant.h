@@ -1,12 +1,12 @@
 #ifndef CONSULTANT_H
 #define CONSULTANT_H
 
-#include "constants.h" // Asegúrate de que MAX_GRUPOS, CSV_FIELD_COUNT, etc., estén aquí
+#include <stddef.h>   
+#include "constants.h"
+#include "constants.h"
 
-// ==========================================
-// ESTRUCTURAS DE DATOS PARA CURSOS
-// ==========================================
 
+//Estructuras de datos para representar cursos, grupos y bloques de horario
 typedef struct {
     int dia;    /* Dia enum: 0=LUN ... 6=DOM, -1 = sin horario */
     int ini;    /* minutos desde medianoche */
@@ -33,16 +33,6 @@ typedef struct {
     int    puede_matricular;    /* 1/0 */
 } Curso;
 
-// ==========================================
-// PROTOTIPOS DE FUNCIONES PÚBLICAS
-// ==========================================
-
-/*
- * Carga el catálogo de cursos desde un archivo CSV.
- * path: Ruta al archivo CSV.
- * cursos: Arreglo donde se guardarán los cursos leídos.
- * count: Puntero a la variable que almacenará la cantidad de cursos leídos.
- */
 void load_courses_from_csv(const char *path, Curso *cursos, size_t *count);
 
-#endif // CONSULTANT_H
+#endif 

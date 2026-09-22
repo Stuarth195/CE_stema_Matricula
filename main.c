@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include "Horario.h"   
 #include "constants.h"
 #include "consultant.h"
 #include "Filter.h" 
@@ -17,6 +17,13 @@ int main(int argc, char *argv[]) {
     Curso catalogo[MAX_CURSOS];
     size_t count = 0;
     load_courses_from_csv(argv[1], catalogo, &count);
+    detectar_choques_horario(catalogo, (int)count);
+    printf("\n--- DIAGNOSTICO DE CHOQUES DE HORARIO ---\n");
+    for (int i = 0; i < (int)count; i++) 
+    {
+        printf("%s: choca_con_alguno = %d\n", catalogo[i].codigo, catalogo[i].choca_con_alguno);
+    }
+    printf("-----------------------------------------\n\n");
     printf("Cursos cargados del catalogo: %zu\n", count);
 
     // 2. Cargar el historial de materias aprobadas del estudiante
