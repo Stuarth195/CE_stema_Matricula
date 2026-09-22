@@ -9,9 +9,9 @@
 int main(int argc, char *argv[]) {
     // Pedimos el CSV de cursos Y el carné del estudiante en la terminal
     if (argc < 3) {
-        fprintf(stderr, "Uso: %s <archivo_cursos.csv> <carnet_estudiante>\n", argv[0]);
+        fprintf(stderr, "Uso: %s <archivo_cursos.csv> <archivo_estudiante.csv>\n", argv[0]);
         return 1;
-    }
+    } 
 
     // 1. Cargar el catálogo completo de cursos
     Curso catalogo[MAX_CURSOS];

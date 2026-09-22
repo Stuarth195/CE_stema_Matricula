@@ -6,77 +6,75 @@
 #include "Filter.h" 
 
 
-char ruta_Carpeta_estudiantes[256] = "CE_stema_Matricula\\Data\\Estudiantes";
+static void extraer_carnet_de_ruta(const char *ruta, char *carnet_out, size_t tam_out) {
+    const char *ultimo_slash = strrchr(ruta, '\\');
+    const char *ultimo_slash2 = strrchr(ruta, '/');
+    if (ultimo_slash2 != NULL && (ultimo_slash == NULL || ultimo_slash2 > ultimo_slash)) {
+        ultimo_slash = ultimo_slash2;
+    }
+
+    const char *nombre_archivo = (ultimo_slash != NULL) ? ultimo_slash + 1 : ruta;
+
+    strncpy(carnet_out, nombre_archivo, tam_out - 1);
+    carnet_out[tam_out - 1] = '\0';
+
+    char *punto = strrchr(carnet_out, '.');
+    if (punto != NULL) {
+        *punto = '\0';
+    }
+}
 
 
-void cargar_historial_estudiante(const char *carnet_input, Estudiante *est)
+void cargar_historial_estudiante(const char *ruta_archivo_estudiante, Estudiante *est)
 {
-    char ruta_archivo[2048]; // espacio reservado para la ruta completa
-    char linea[1024]; // ser guarda la linea del archivo scv 
-    // 1. Copiar el carné a la estructura
-    strncpy(est->carnet, carnet_input, sizeof(est->carnet) - 1);
+    char linea[1024];
+    extraer_carnet_de_ruta(ruta_archivo_estudiante, est->carnet, sizeof(est->carnet));
 
-    est->carnet[sizeof(est->carnet) - 1] = '\0'; 
-    // 2. Arma la ruta completa del archivo CSV
-    snprintf(ruta_archivo, sizeof(ruta_archivo), "%s\\%s.csv", ruta_Carpeta_estudiantes, carnet_input);
-    printf("Intentando abrir: %s\n", ruta_archivo);   // <-- agrega esto
-    // 3. Abre el archivo CSV del estudiante co la ruta completa armada anteriormente
-    FILE *archivo = fopen(ruta_archivo, "r");
+    // 1. Extraer el carné directamente del nombre del archivo
+    extraer_carnet_de_ruta(ruta_archivo_estudiante, est->carnet, sizeof(est->carnet));
+
+    // 2. Inicializamos nmaterias ANTES de intentar abrir el archivo
+    est->nmaterias = 0;
+
+    // 3. Abre el archivo CSV del estudiante
+    FILE *archivo = fopen(ruta_archivo_estudiante, "r");
     if (archivo == NULL) {
         perror("No se pudo encontrar el expediente del estudiante");
         return;
     }
+
     // 4. Lee la primera línea del archivo CSV y separa los campos
     if (fgets(linea, sizeof(linea), archivo) != NULL) {
-            linea[strcspn(linea, "\r\n")] = '\0';
+        linea[strcspn(linea, "\r\n")] = '\0';
 
-            // Un arreglo temporal con las direcciones de los 4 campos de la estructura
-            char *campos[4] = { est->apellido1, est->apellido2, est->nombre1, est->nombre2 };
+        char *campos[4] = { est->apellido1, est->apellido2, est->nombre1, est->nombre2 };
 
-            for (int i = 0; i < 4; i++) {
-                // Si es la primera vuelta usa 'linea', en las siguientes usa NULL para continuar
-                char *token = strtok((i == 0) ? linea : NULL, ",");// Separa los campos por comas
-                
-                if (token != NULL) {
-                    strncpy(campos[i], token, 31); // Copia el token al campo correspondiente de la estructura
-                    campos[i][31] = '\0'; // Asegurar fin de cadena
-                }
+        for (int i = 0; i < 4; i++) {
+            char *token = strtok((i == 0) ? linea : NULL, ",");
+            if (token != NULL) {
+                strncpy(campos[i], token, 31);
+                campos[i][31] = '\0';
             }
         }
+    }
 
     // 5. Lee las siguientes líneas del archivo CSV para obtener las materias
-    est->nmaterias = 0; // Inicializa el contador de materias
     if (fgets(linea, sizeof(linea), archivo) != NULL) {
         linea[strcspn(linea, "\r\n")] = '\0';
 
         char *token = strtok(linea, ",");
-        while (token != NULL && est->nmaterias < 128) 
+        while (token != NULL && est->nmaterias < 128)
         {
             strncpy(est->materias[est->nmaterias], token, sizeof(est->materias[est->nmaterias]) - 1);
             est->materias[est->nmaterias][sizeof(est->materias[est->nmaterias]) - 1] = '\0';
-            
+
             est->nmaterias++;
             token = strtok(NULL, ",");
         }
     }
 
-    fclose(archivo);// Cierra el archivo después de leerlo
-/* Forma de la structura del archivo CSV:
-Estuadiante 
-    {
-        carnet 
-        apellido1
-        apellido2
-        nombre1
-        nombre2
-        materias[128][16] // 128 materias, cada una con un máximo de 16 caracteres(codigo de la materia)
-    }
-*/
+    fclose(archivo);
 }
-
-
-
-
 int estudiante_aprobo_materia(const Estudiante *est, const char *codigo_materia) {
     for (int i = 0; i < est->nmaterias; i++) {
         if (strcmp(est->materias[i], codigo_materia) == 0) {
