@@ -9,10 +9,10 @@ Paradigmas de Programación (CE1106) · Proyecto, Etapa 1 — Paradigma Imperati
 
 **Integrantes:**
 - Raul Ramirez Villegas — Carné 2024157970
-- [Nombre integrante 2] — Carné [xxxxx]
-- [Nombre integrante 3] — Carné [xxxxx]
+- David Solís Méndez — Carné 2019052194
+- Claudio Arce Cascante — Carné 201058559
 
-**Carreras trabajadas:** Ingeniería en Computadores + [Licenciatura elegida]
+**Carreras trabajadas:** Ingeniería en Computadores + Ingenieiría en Computación
 
 ---
 
