@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 # Registro de Complicaciones, Soluciones y Funciones Clave (Módulo de Importación en Racket)
 
 En este documento se detallan los problemas técnicos encontrados durante la configuración e implementación del pipeline de lectura/importación de datos JSON en Racket, junto con sus respectivas causas, soluciones aplicadas y las funciones de entrada/salida (I/O) utilizadas como puente para pasar del JSON a las estructuras de Racket[cite: 1, 2].
