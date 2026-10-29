@@ -1,181 +1,406 @@
-# Registro de Complicaciones, Soluciones y Funciones Clave (Módulo de Importación en Racket)
 
-En este documento se detallan los problemas técnicos encontrados durante la configuración e implementación del pipeline de lectura/importación de datos JSON en Racket, junto con sus respectivas causas, soluciones aplicadas y las funciones de entrada/salida (I/O) utilizadas como puente para pasar del JSON a las estructuras de Racket[cite: 1, 2].
+# CEmestre: Constructor de Horarios
 
----
+**Etapa 2 · Módulo en Racket (Paradigma Funcional)**
 
-##  Resumen de Complicaciones y Soluciones
+Instituto Tecnológico de Costa Rica · Escuela Ingeniería en Computadores · Paradigmas de Programación (CE1106)
 
-| # | Problema / Mensaje de Error | Causa Raíz | Solución Aplicada |
-|---|---|---|---|
-| **1** | `read-syntax: no hex digit following \U` | Uso de barras invertidas de Windows (`\`) en la cadena de texto de la ruta del archivo[cite: 1, 2]. | Reemplazar las barras invertidas por barras normales (`/`) en las rutas de Racket[cite: 1, 2]. |
-| **2** | `cannot open module file module path: net/json` | Intento de importar la librería de JSON mediante la ruta incorrecta `net/json`[cite: 1, 2]. | Cambiar la directiva de importación a la colección correcta `json` o `typed/json`[cite: 1, 2]. |
-| **3** | `Type Checker: missing type for identifier ... read-json` | Se usó `#lang typed/racket` con la librería estándar sin tipos explícitos para el verificador de tipos[cite: 1, 2]. | Importar la librería adaptada para Typed Racket utilizando `(require typed/json)`[cite: 1, 2]. |
-
----
-
-##  Detalle Técnico de los Incidentes
-
-### 1. Error de Escape de Caracteres en Rutas de Archivos (Windows)
-* **El Problema:** Al especificar la ruta absoluta con barras invertidas (`C:\Users\...`), Racket arrojó el error `read-syntax: no hex digit following \U`[cite: 1, 2].
-* **Causa:** En Racket, el carácter `\` es un prefijo de escape. `\U` fue interpretado como un código de carácter Unicode hexadecimal[cite: 1, 2].
-* **Solución:** Se ajustaron los delimitadores de la ruta utilizando barras diagonales hacia adelante (`/`)[cite: 1, 2].
-
-### 2. Error de Nombre de Módulo Inexistente (`net/json`)
-* **El Problema:** Al intentar requerir `(require net/json)`, Racket indicó que no encontraba el archivo o directorio[cite: 1, 2].
-* **Causa:** El módulo `net/json` no existe en la distribución estándar de Racket[cite: 1, 2].
-* **Solución:** Se corrigió a la librería nativa de manejo de JSON[cite: 1, 2].
-
-### 3. Error de Verificación de Tipos en Typed Racket
-* **El Problema:** Al compilar con `#lang typed/racket`, el *Type Checker* bloqueó el uso de `read-json` por falta de tipos[cite: 1, 2].
-* **Causa:** La librería estándar no expone firmas de tipos compatibles con Typed Racket[cite: 1, 2].
-* **Solución:** Se sustituyó por el módulo nativo tipado **`typed/json`**[cite: 1, 2].
+| Campo | Detalle |
+|---|---|
+| Etapa | 2 (Racket, paradigma funcional) |
+| Lenguaje | Racket con Typed Racket (`#lang typed/racket`) |
+| Integrantes | Stuarth, David, Claudio |
+| Repositorio | [Completar] |
 
 ---
 
-##  Funciones Clave de I/O Aprendidas (Solución Puente JSON → Racket)
+## Contenido
 
-Para solucionar el traspaso de información desde el archivo JSON exportado por C hacia las estructuras internas de Racket, aprendimos y aplicamos las siguientes funciones fundamentales como mecanismo de conversión intermedia[cite: 1, 2]:
-
-* **`call-with-input-file`**: Método de Racket que abre un archivo de entrada en la ruta especificada y pasa el puerto de lectura resultante como argumento a la función dada (como `read-json`), asegurando además que el archivo se cierre de forma segura al finalizar la operación.
-* **`read-json`**: Función de la librería `typed/json` que lee la entrada del puerto proporcionado por `call-with-input-file` y parsea el contenido del archivo JSON convirtiéndolo directamente en una **estructura intermedia** (tablas hash y listas nativas de Racket). Esto sirvió como el puente necesario para luego mapear y extraer cada atributo hacia nuestras estructuras finales tipadas (`Curso`, `Grupo`, `Horario-info`)[cite: 1].
-
-## Explicación de las funciones aprendidas: 
-```racket
-  - call-with-input-file: metodo de racket que lee el archivo de entrada y lo pasa como argumento a la funcion.
-  - read-json: funcion de racket que lee la entrada pasada por (call-with-input-file) y lo parsea en formato hash/lista (estructura intermedia).
-```
+1. [Introducción](#1-introducción)
+2. [Arquitectura y estructuras de datos](#2-arquitectura-y-estructuras-de-datos)
+3. [Entrada: importación de datos (Parte )](#3-entrada-importación-de-datos-parte-a---stuarth)
+4. [Generación y filtrado de combinaciones (Parte B - David)](#4-generación-y-filtrado-de-combinaciones-parte-b---david)
+5. [Filtrado por Rango de Créditos y Polimorfismo Paramétrico (Parte C - Claudio)](#5-filtrado-por-rango-de-créditos-y-polimorfismo-paramétrico-parte-c---claudio)
+6. [Salida: serialización y exportación a JSON (Parte D)](#6-salida-serialización-y-exportación-a-json-parte-d---stuarth)
 
 ---
 
-##  Código Final Operativo
+## 1. Introducción
 
-```racket
-#lang typed/racket
+### 1.1 Objetivo de la etapa
 
-(require typed/json)
-(require "Estructuras.rkt")
+Implementar, en paradigma funcional (Racket), el componente que genera y filtra las combinaciones válidas de horario a partir del catálogo construido en la etapa anterior (módulo en C), utilizando tipado explícito y al menos una función con polimorfismo paramétrico[cite: 8, 12].
 
-;; Lee el archivo JSON y retorna la representación intermedia (hashes y listas)
-(: leer-json-intermedio (-> String Any))
-(define (leer-json-intermedio ruta)
-  (call-with-input-file ruta read-json))
+### 1.2 Alcance del módulo
 
-;; Imprime la estructura intermedia en la consola para inspeccionar su contenido
-(: imprimir-intermedio (-> Any Void))
-(define (imprimir-intermedio datos)
-  (write datos)
-  (newline))
+| El módulo realiza | El módulo no realiza |
+|---|---|
+| Leer el catálogo validado por el módulo en C y las preferencias del estudiante[cite: 9, 12]. | Armar un horario final ni sugerir una combinación[cite: 9, 12]. |
+| Generar combinaciones de un grupo por curso habilitado, sin choques de horario[cite: 9, 12]. | Optimizar ni aplicar preferencias del estudiante[cite: 9, 12]. |
+| Filtrar las combinaciones por el rango de créditos indicado[cite: 9, 12]. | Presentar resultados en una interfaz gráfica[cite: 9, 12]. |
+| Exportar las combinaciones resultantes a un archivo JSON[cite: 9, 12]. | Aplicar reglas adicionales fuera del paradigma funcional[cite: 9, 12]. |
 
-;; Ruta del archivo JSON exportado por C
-(define ruta-archivo "C:/Users/shoko/OneDrive/Attachments/Documents/GitHub/CE_stema_Matricula/catalogo_salida.json")
+### 1.3 Flujo de datos y reparto de responsabilidades
 
-;; 1. Obtenemos la estructura intermedia (hashes/listas nativos de Racket)
-(define json-intermedio (leer-json-intermedio ruta-archivo))
-
-;; 2. Lo imprimimos en consola para analizarlo
-(imprimir-intermedio json-intermedio)
+```text
+ Catálogo validado (JSON, módulo en C)      Preferencias del estudiante (JSON)
+                   |                                        |
+                   +-------------------+--------------------+
+                                       |
+                        [Sección 3]  Importar.rkt
+              JSON -> estructuras tipadas (Estructuras.rkt)
+                                       |
+                        [Sección 4]  Generación y Streams
+                           combinaciones sin choques
+                                       |
+                        [Sección 5]  Filtrado y Polimorfismo
+                             Rango de créditos min/max
+                                       |
+                        [Sección 6]  Output.rkt
+             Combinacion -> JSExpr -> archivo JSON
+                                       |
+                              combinaciones.json
 
 ```
 
-# Documentacion parte David
+| Parte | Sección | Módulo(s) | Responsable | Estado |
+| --- | --- | --- | --- | --- |
+| A. Entrada | 2 y 3 | `Estructuras.rkt`, `Importar.rkt` | Stuarth | Completa |
+| B. Generación de Combinaciones | 4 | [Módulo de Generación] | David | [Editable por David] |
+| C. Filtrado y Polimorfismo | 5 | [Módulo de Filtrado] | Claudio | [Editable por Claudio] |
+| D. Salida | 6 | `Output.rkt` | Stuarth | Completa |
+
+### 1.4 Entorno y ejecución
+
+```text
+Entorno
+  Lenguaje           : Racket (#lang typed/racket)
+  Editor             : DrRacket
+  Versión de Racket  : [Completar]
+  Dependencias       : typed/json  ->  (require typed/json)
+
+Ejecución
+  Archivo principal  : main.rkt
+  Desde DrRacket     : abrir el archivo y pulsar Run
+  Línea de comandos  : racket main.rkt
+  Ejecutable         : [Completar]
 
 ```
 
+Al pulsar **Run**, DrRacket compila el módulo y verifica los tipos antes de ejecutarlo. Los errores de tipo aparecieran en esa etapa y no durante la ejecución con datos reales.
 
+---
 
+## 2. Arquitectura y estructuras de datos
 
+### 2.1 Organización del código
+
+| Archivo | Responsabilidad | Depende de |
+| --- | --- | --- |
+| `Estructuras.rkt` | Define los tipos de datos del dominio.
+
+ | Ninguno
+
+ |
+| `Importar.rkt` | Convierte el JSON de entrada en estructuras tipadas.
+
+ | `typed/json`, `Estructuras.rkt`
+
+ |
+| [Módulo de Generación] | Genera combinaciones válidas mediante streams (Parte B)[cite: 7, 12]. | `Estructuras.rkt`
+
+ |
+| [Módulo de Filtrado] | Filtra combinaciones por rango de créditos usando polimorfismo (Parte C).
+
+ | `Estructuras.rkt` |
+| `Output.rkt` | Convierte las combinaciones en JSON y las escribe en un archivo.
+
+ | `typed/json`, `Estructuras.rkt`
+
+ |
+
+### 2.2 Tipado explícito con Typed Racket
+
+Cada módulo inicia con `#lang typed/racket`. Con esta directiva, el verificador de tipos revisa el módulo completo en tiempo de compilación.
+
+### 2.3 Estructuras de datos
+
+Todas están definidas en `Estructuras.rkt`.
+
+#### `Horario-info`: bloque horario de un grupo
+
+| Campo | Tipo | Descripción |
+| --- | --- | --- |
+| `dia` | `(U String #f)` | Día de la semana del bloque.
+
+ |
+| `inicio` | `(U String #f)` | Hora de inicio (formato `HH:MM`).
+
+ |
+| `fin` | `(U String #f)` | Hora de finalización (formato `HH:MM`).
+
+ |
+
+#### `Grupo`: grupo de un curso
+
+| Campo | Tipo | Descripción |
+| --- | --- | --- |
+| `numero` | `Integer` | Número del grupo.
+
+ |
+| `Horario-Grupo` | `(Listof Horario-info)` | Bloques horarios del grupo.
+
+ |
+
+#### `Curso`: curso del catálogo
+
+| Campo | Tipo | Descripción |
+| --- | --- | --- |
+| `carrera` | `String` | Carrera que aporta el curso (campo obligatorio añadido en esta etapa)[cite: 7, 9, 12]. |
+| `codigo` | `String` | Código del curso.
+
+ |
+| `nombre` | `String` | Nombre del curso.
+
+ |
+| `creditos` | `Integer` | Créditos del curso.
+
+ |
+| `grupos` | `(Listof Grupo)` | Grupos disponibles.
+
+ |
+| `requisitos` | `(Listof String)` | Códigos de los cursos requisito.
+
+ |
+| `correquisito` | `(U String #f)` | Código del correquisito, o `#f` si no tiene.
+
+ |
+| `choca-con-alguno` | `Boolean` | Bandera calculada por el módulo en C.
+
+ |
+| `puede-matricular` | `Boolean` | Bandera de elegibilidad calculada por el módulo en C.
+
+ |
+
+#### `Preferencia` y `Curso-Interes`: preferencias del estudiante
+
+| Estructura | Campo | Tipo | Descripción |
+| --- | --- | --- | --- |
+| `Preferencia` | `carnet` | `String` | Identificador del estudiante.
+
+ |
+|  | `cursos-interes` | `(Listof Curso-Interes)` | Cursos que desea matricular.
+
+ |
+|  | `creditos-min` | `Integer` | Créditos mínimos deseados.
+
+ |
+|  | `creditos-max` | `Integer` | Créditos máximos deseados.
+
+ |
+| `Curso-Interes` | `codigo` | `String` | Código del curso de interés.
+
+ |
+|  | `grupos` | `(Listof Integer)` | Números de grupo de interés (más de uno por curso).
+
+ |
+
+#### `Combinacion`: resultado de la etapa
+
+| Campo | Tipo | Descripción |
+| --- | --- | --- |
+| `pares` | `(Listof (Pairof Curso Grupo))` | Pares curso-grupo seleccionados.
+
+ |
+| `creditos-totales` | `Integer` | Suma de créditos de la combinación.
+
+ |
+| `carreras-origen` | `(Listof String)` | Carreras de origen de los cursos incluidos.
+
+ |
+
+---
+
+## 3. Entrada: importación de datos (Parte A )
+
+Módulo: `Importar.rkt`. Convierte los archivos JSON de entrada en las estructuras de la Sección 2.
+
+### 3.1 Contrato de entrada
+
+Se reciben dos archivos JSON: el catálogo exportado por el módulo en C (con el campo `carrera` por curso) y el archivo de preferencias del estudiante.
+
+### 3.2 API pública del módulo
+
+| Función | Firma | Descripción |
+| --- | --- | --- |
+| `leer-json-intermedio` | `(-> String Any)` | Lee el archivo en `ruta` y devuelve su representación intermedia.
+
+ |
+| `parsear-horario-info` | `(-> Any Horario-info)` | Convierte un objeto bloque en `Horario-info`.
+
+ |
+| `parsear-grupo` | `(-> Any Grupo)` | Convierte un objeto grupo en `Grupo`; usa `parsear-horario-info`.
+
+ |
+| `parsear-curso` | `(-> Any Curso)` | Convierte un objeto curso en `Curso`; usa `parsear-grupo`.
+
+ |
+| `parsear-curso-interes` | `(-> Any Curso-Interes)` | Convierte un curso de interés.
+
+ |
+| `parsear-preferencia` | `(-> Any Preferencia)` | Convierte el objeto de preferencias completo.
+
+ |
+| `leer-preferencias-estudiante` | `(-> String Preferencia)` | Función de alto nivel: lee el archivo de preferencias y devuelve la estructura.
+
+ |
+
+### 3.3 Funciones de biblioteca utilizadas y por qué
+
+Se utilizaron `call-with-input-file` y `read-json` de la librería `typed/json` para la apertura segura y parseo del archivo fuente a una representación intermedia de hashes y listas nativas de Racket.
+
+---
+
+## 4. Generación y filtrado de combinaciones (Parte B - David)
+
+> **[Editable por David]**
+> Esta sección debe ser completada por David. Corresponde a la generación de combinaciones válidas utilizando **Streams** e inmutabilidad estricta[cite: 7, 10, 12].
+> 
+> 
+
+```text
++---------------------------------------------------------------------+
+| PARTE B  |  GENERACIÓN DE COMBINACIONES (STREAMS Y ESTADO PURO)     |
++---------------------------------------------------------------------+
+| Responsable : David                                                 |
+| Archivo(s)  : [Completar con el nombre del módulo .rkt]            |
+| Estado      : PENDIENTE DE DOCUMENTACIÓN                           |
++---------------------------------------------------------------------+
 
 ```
 
+### 4.1 Interfaz del módulo
 
+* [David: Definir firmas de las funciones principales y qué datos recibe de la Parte A]
 
+### 4.2 Algoritmo de generación
 
+* [David: Explicar la recursión para armar las combinaciones de un grupo por curso habilitado sin choques]
 
+### 4.3 Uso de streams
 
+* [David: Detallar la implementación mediante streams para evitar listas completas en memoria]
 
+### 4.4 Principios de diseño funcional
 
+* [David: Confirmar inmutabilidad y ausencia total de mutación (`set!`, variables globales reasignadas)]
 
+### 4.5 Funciones de biblioteca utilizadas y por qué
 
+| Función | Origen | Qué hace | Dónde se usa | Por qué se eligió |
+| --- | --- | --- | --- | --- |
+| `[nombre]` | `[racket/stream, etc.]` | [David] | [David] | [David] |
 
-# Documentacion parte Claudio
+### 4.6 Caso límite real y decisiones técnicas
+
+* [David: Explicar un caso límite encontrado durante el desarrollo de las combinaciones y su solución]
+
+---
+
+## 5. Filtrado por Rango de Créditos y Polimorfismo Paramétrico (Parte C - Claudio)
+
+> **[Editable por Claudio]**
+> Esta sección debe ser completada por Claudio. Corresponde al filtrado de combinaciones según el rango de créditos deseado y la integración de polimorfismo paramétrico[cite: 7, 10, 12].
+> 
+> 
+
+```text
++---------------------------------------------------------------------+
+| PARTE C  |  FILTRADO Y POLIMORFISMO PARAMÉTRICO                    |
++---------------------------------------------------------------------+
+| Responsable : Claudio                                               |
+| Archivo(s)  : [Completar con el nombre del módulo .rkt]            |
+| Estado      : PENDIENTE DE DOCUMENTACIÓN                           |
++---------------------------------------------------------------------+
 
 ```
 
+### 5.1 Interfaz del módulo
+
+* [Claudio: Definir las firmas de filtrado por créditos mínimos y máximos]
+
+### 5.2 Función con Polimorfismo Paramétrico
+
+* [Claudio: Explicar el diseño de la función con firma `(All (A) ...)` reutilizable para distintos tipos de filtros]
+
+### 5.3 Principios de diseño funcional
+
+* [Claudio: Explicar el manejo puro sin mutación ni efectos secundarios]
+
+### 5.4 Funciones de biblioteca utilizadas y por qué
+
+| Función | Origen | Qué hace | Dónde se usa | Por qué se eligió |
+| --- | --- | --- | --- | --- |
+| `[nombre]` | `[racket/base, etc.]` | [Claudio] | [Claudio] | [Claudio] |
+
+### 5.5 Caso límite real y decisiones técnicas
+
+* [Claudio: Explicar un caso límite técnico resuelto durante el filtrado]
+
+---
+
+## 6. Salida: serialización y exportación a JSON (Parte D)
+
+Módulo: `Output.rkt`. Convierte una lista de `Combinacion` en un archivo JSON estructurado.
+
+### 6.1 Justificación del formato (JSON frente a CSV)
+
+El módulo utiliza **JSON** como formato único para la serialización de salida:
+
+* **Estructuras anidadas:** Soporta la jerarquía combinación $\rightarrow$ pares $\rightarrow$ curso $\rightarrow$ grupos $\rightarrow$ bloques horarios sin la rigidez de tablas planas en CSV.
+
+
+* **Colecciones bien diferenciadas:** Distingue atómicos, arreglos u objetos de clave-valor.
 
 
 
+### 6.2 Estrategia de serialización
 
+```text
+ Combinacion                  JSExpr                       Archivo JSON
+ (estructuras)  ----------->  (hasheq, listas,  ----------->  (texto con
+                 *->jsexpr      cadenas, números)  escribir-    indentación)
+                                                   json-bonito
 
 ```
 
+### 6.3 API pública e integración
 
+| Función | Firma | Descripción |
+| --- | --- | --- |
+| `horario->jsexpr` | `(-> Horario-info JSExpr)` | Convierte un bloque horario.
 
-# Documentacion parte exportacion 
+ |
+| `grupo->jsexpr` | `(-> Grupo JSExpr)` | Convierte un grupo (claves `numero` y `bloques`).
 
+ |
+| `curso->jsexpr` | `(-> Curso JSExpr)` | Convierte un curso completo, incluidos sus grupos.
 
-# Especificación Técnica del Módulo I/O y Exportación JSON
+ |
+| `par->jsexpr` | `(-> (Pairof Curso Grupo) JSExpr)` | Convierte un par curso-grupo en un objeto.
 
-Este documento describe la arquitectura, decisiones de diseño técnico, especificaciones de formato de entrada/salida y manejo de tipos para el módulo de procesamiento e intercambio de datos en **Typed Racket**.
+ |
+| `combinacion->jsexpr` | `(-> Combinacion JSExpr)` | Convierte una combinación.
 
----
+ |
+| `escribir-json-bonito` | `(-> JSExpr Output-Port Integer Void)` | Escribe un `JSExpr` en un puerto con indentación.
 
-## 1. Justificación de Formatos de Entrada y Salida (JSON vs. CSV)
+ |
+| `exportar-combinaciones-json` | `(-> String (Listof Combinacion) Void)` | Escribe todas las combinaciones en el archivo indicado.
 
-El módulo utiliza **JSON** como estándar único para los archivos de entrada (preferencias de estudiantes y catálogo) y salida (combinaciones de cursos).
+ |
 
-### Razones para la elección de JSON:
-* **Estructuras compuestas y anidadas:** A diferencia de una estructura plana estilo CSV, el modelo de datos requiere representar listas dentro de objetos (por ejemplo, un curso que contiene múltiples grupos, donde cada grupo contiene múltiples bloques de horarios). Representar esta jerarquía en CSV requeriría múltiples archivos planos vinculados mediante llaves foráneas manuales o redundancia masiva de filas.
-* **Integración nativa con Prolog:** El motor de Prolog de la siguiente fase del sistema puede mapear objetos y arreglos JSON a listas y términos compuestos de forma directa sin requerir librerías complejas de parseo de texto tabular.
-* **Tipado claro de colecciones:** Permite diferenciar de forma unívoca entre elementos atómicos, arreglos heterogéneos y diccionarios de clave-valor.
-
----
-
-## 2. Decisiones de Implementación y Manejo de Tipos en Typed Racket
-
-### 2.1. Uso del Tipo `JSExpr`
-Para la serialización de datos se hace uso del tipo representativo `JSExpr` proporcionado por la librería `typed/json`.
-
-* **Propósito:** `JSExpr` es el tipo sum/unión nativo en Typed Racket que define cualquier expresión válida en sintaxis JSON (hashes con claves de tipo símbolo, listas, cadenas, números exactos/inexactos y booleanos).
-* **Razón de uso:** Garantiza en tiempo de compilación que las funciones mappers (`horario->jsexpr`, `curso->jsexpr`, etc.) conviertan las estructuras fuertemente tipadas de Racket (`struct`) en colecciones que la función de escritura pueda procesar sin romper el contrato del sistema.
-
-### 2.2. Formateo y Serialización Personalizada (`escribir-json-bonito`)
-Debido a que la función estándar `write-json` genera flujos de datos continuos en una sola línea y serializa los booleanos con la sintaxis interna `#t` / `#f`, se implementó el procedimiento recursivo `escribir-json-bonito`.
-
-* **Navegación recursiva:** Recorre inductivamente las estructuras Hash y Listof, aplicando la indentación adecuada basada en la profundidad del árbol.
-* **Traducción explícita de tipos:** Convierte tipos de datos de Racket a tipos primitivos estándar compatibles con Parsers externos.
-
----
-
-## 3. Complicaciones Técnicas Resueltas
-
-1. **Resolución de nombres e inferencia en `JSExpr`:**
-   En Typed Racket, el identificador exacto exportado por `typed/json` es `JSExpr` (en mayúsculas). Para evitar fallos en las funciones de mapeo coleccionables (`map`), los resultados intermedios requieren anotaciones de tipo explícitas (`(let ([jsexpr-lista : JSExpr ...]))`).
-
-2. **Inferencia de Tipos en Funciones Polimórficas de I/O:**
-   El chequeador de tipos de Racket presenta limitaciones para inferir funciones con argumentos nombrados opcionales como `call-with-output-file` junto con `#:exists 'replace`. La solución técnica requerida consistió en instanciar explícitamente el puerto mediante `open-output-file` y cerrar el recurso al finalizar con `close-output-port`.
-
----
-
-## 4. Notas y Aclaraciones Técnicas de la Salida
-
-Para mantener la consistencia con las reglas de negocio de la fase en Prolog, el módulo implementa las siguientes transformaciones específicas en el JSON generado:
-
-### Representación de Booleanos (0 y 1)
-Por requerimiento del parser de la siguiente etapa, los valores lógicos de Racket (`#t` y `#f`) no se escriben como cadenas ni como palabras clave booleanas de JSON, sino como enteros atómicos:
-* `#t` $\rightarrow$ `1`
-* `#f` $\rightarrow$ `0`
-
-### Tratamiento de Requisitos vs. Correquisitos
-* **`requisitos` (`Listof String`):** Se mapea como un arreglo JSON. Si un curso no posee requisitos previos, el campo contendrá un arreglo vacío `[]`.
-* **`correquisito` (`(U String #f)`):** Si existe un correquisito, se representa como una cadena con el código del curso (ejemplo: `"FI1102"`). Si no posee correquisito (valor `#f` en Racket), la serialización lo traduce explícitamente a un número `0`.
-
-### Alcance de la Información del JSON de Salida
-El objeto exportado no incluye datos del estudiante (carnet, límites de créditos o preferencias). Estos atributos solo actúan como filtros en la fase previa en Racket. La salida contiene exclusivamente las combinaciones resultantes, los créditos totales de la combinación y las carreras de origen de los cursos.
-
----
-
-## 5. Estructura Exacta del JSON de Salida
+### 6.4 Esquema del JSON de salida
 
 ```json
 [
@@ -225,96 +450,10 @@ El objeto exportado no incluye datos del estudiante (carnet, límites de crédit
   }
 ]
 
-
-
-
-
-
 ```
 
-## Conversión y modelado de datos JSON en Typed Racket
+### 6.5 Caso límite real resuelto
 
-### 1. Organización de la importación
+**Curso sin correquisito (valor ausente de extremo a extremo):**
+Un curso sin correquisito llega con el valor `null`. `read-json` lo convierte en el símbolo `'null`. Durante el parseo en `Importar.rkt`, `parsear-curso` valida mediante `string?` y le asigna `#f` en caso negativo. Al momento de exportar en `Output.rkt`, `escribir-json-bonito` traduce `#f` como `0` para mantener el estándar de enteros atómicos requeridos.
 
-Para convertir la información del catálogo JSON a estructuras internas de Racket, se separó el proceso en diferentes niveles:
-
-1. **Lectura:** `leer-json-intermedio` obtiene los datos del archivo mediante `read-json`.
-2. **Conversión:** `parsear-horario-info`, `parsear-grupo` y `parsear-curso` transforman los objetos JSON en estructuras tipadas.
-3. **Validación:** durante la conversión se comprueba que los atributos tengan los tipos de datos esperados.
-
-La separación permite procesar estructuras anidadas, ya que cada curso contiene grupos y cada grupo contiene bloques de horarios.
-
-### 2. Funciones y construcciones utilizadas
-
-Se utilizaron funciones propias de Racket y de la biblioteca `typed/json`. Algunas requirieron especial atención debido a su funcionamiento y su relación con el sistema de tipos.
-
-| Función o construcción | Descripción y aplicación |
-|---|---|
-| `hash?` | Comprueba si un valor es una tabla hash. Se utiliza antes de acceder a las propiedades de un objeto JSON. |
-| `hash-ref` | Obtiene el valor asociado a una clave. Permite recuperar campos como `codigo`, `creditos` o `grupos`. |
-| `#hasheq()` | Representa una tabla hash vacía e inmutable que utiliza `eq?` para comparar claves. Se emplea como valor alternativo cuando un dato no es una tabla hash. |
-| `lambda` | Construye funciones anónimas. En `hash-ref` se utiliza para devolver un valor alternativo cuando una clave no existe. |
-| `exact-integer?` | Comprueba si un valor es un número entero exacto. Se utiliza para validar los créditos y los números de grupo. |
-| `string?` | Determina si un dato es una cadena de texto. Permite validar atributos como nombres, códigos y carreras. |
-| `list?` | Verifica si un valor es una lista antes de recorrerlo. Se aplica a grupos, bloques horarios y requisitos. |
-| `eq?` | Compara identidad. En la importación se utiliza para comprobar si las banderas booleanas recibidas son `#t`. |
-| `map` | Aplica una función a cada elemento de una lista y construye una nueva lista con los resultados, sin modificar la original. |
-| `filter` | Construye una lista con los elementos que cumplen una condición. Se utiliza para conservar únicamente los requisitos que sean cadenas de texto. |
-| `let*` | Permite declarar variables locales de manera secuencial, utilizando los resultados anteriores en las siguientes operaciones. |
-
-También se utilizaron construcciones de Typed Racket como `struct`, para definir los modelos de datos; `#:transparent`, para facilitar su inspección y comparación; y `(U String #f)`, para representar atributos que pueden contener una cadena o un valor falso.
-
-Estas últimas no son funciones convencionales, sino mecanismos del lenguaje y del sistema de tipos.
-
-### 3. Dificultades y decisiones técnicas
-
-**Conversión de datos sin tipos garantizados**
-
-`read-json` obtiene los datos del archivo, pero no los convierte directamente en instancias de las estructuras definidas en el proyecto.
-
-Por esta razón, las funciones de importación reciben inicialmente valores de tipo `Any` y realizan comprobaciones mediante predicados como `string?`, `list?` y `exact-integer?` antes de construir las estructuras tipadas.
-
-**Manejo de campos ausentes o con valores inesperados**
-
-Durante la lectura pueden encontrarse atributos ausentes, nulos o con un tipo diferente del esperado.
-
-Se utilizó `hash-ref` junto con funciones `lambda` para proporcionar valores alternativos. Posteriormente, se comprueba el tipo recibido.
-
-Por ejemplo:
-
-```racket
-[creditos-en-bruto
- (hash-ref objeto-curso-json 'creditos
-           (lambda () #f))]
-
-[creditos-extraidos
- (if (exact-integer? creditos-en-bruto)
-     creditos-en-bruto
-     0)]
-```
-
-Este mecanismo evita errores inmediatos al intentar acceder a claves inexistentes y garantiza un valor compatible con el tipo esperado.
-
-Sin embargo, también introduce una consideración importante: reemplazar un dato inválido por `0`, `""` o una lista vacía puede ocultar información incorrecta. Por ello, es necesario distinguir entre campos opcionales y obligatorios cuando se establecen las reglas de validación del catálogo.
-
-**Procesamiento de estructuras anidadas**
-
-La información JSON contiene diferentes niveles de organización. En lugar de procesar toda la información dentro de una única función, se dividió la conversión en funciones independientes.
-
-Así, `parsear-curso` utiliza `parsear-grupo`, y esta a su vez utiliza `parsear-horario-info`.
-
-Esto facilita la lectura, el mantenimiento y la reutilización del código.
-
-**Uso de inmutabilidad**
-
-El proyecto exige respetar el paradigma funcional, evitando instrucciones de mutación como `set!`.
-
-Para transformar las listas provenientes del JSON se utilizaron `map` y `filter`. Estas funciones producen nuevas listas sin modificar las originales, permitiendo realizar las conversiones de forma declarativa y respetando la inmutabilidad de los datos.
-
-### 4. Consideraciones de diseño
-
-La separación entre lectura, validación y construcción de estructuras permite mantener el módulo de importación independiente de la lógica encargada de generar combinaciones de horarios.
-
-Además, trabajar con estructuras tipadas facilita que otros módulos accedan a los atributos mediante funciones definidas por Racket, como `Curso-codigo`, `Curso-grupos` o `Grupo-Horario-Grupo`, sin tener que consultar directamente las claves del JSON.
-
-Esta organización establece una interfaz de datos más clara entre los componentes del proyecto.
