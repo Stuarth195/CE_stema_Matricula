@@ -31,6 +31,7 @@ typedef struct {
     /* Resultados calculados: */
     int    choca_con_alguno;    /* 1/0 */
     int    puede_matricular;    /* 1/0 */
+    char carrera[50]; // Nuevo requisito parte 2
 } Curso;
 
 void load_courses_from_csv(const char *path, Curso *cursos, size_t *count);

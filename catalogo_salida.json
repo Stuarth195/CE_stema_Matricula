@@ -1,4 +1,1425 @@
 {
   "cursos": [
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "CI1106",
+      "nombre": "Comunicacion escrita",
+      "creditos": 2,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "CI1107",
+      "nombre": "Comunicacion escrita",
+      "creditos": 1,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 10,
+          "bloques": [
+            {"dia": "MAR", "inicio": "16:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 11,
+          "bloques": [
+            {"dia": "MAR", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 12,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 13,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 14,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 15,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 16,
+          "bloques": [
+            {"dia": "MIE", "inicio": "16:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 17,
+          "bloques": [
+            {"dia": "MIE", "inicio": "17:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 18,
+          "bloques": [
+            {"dia": "MIE", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 19,
+          "bloques": [
+            {"dia": "JUE", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 20,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 21,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 22,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 23,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        }
+      ],
+      "requisitos": ["CI1106"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "CI1230",
+      "nombre": "Ingles I",
+      "creditos": 2,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 10,
+          "bloques": [
+            {"dia": "JUE", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 11,
+          "bloques": [
+            {"dia": "VIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "17:50"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 8,
+          "bloques": [
+            {"dia": "MIE", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 9,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        }
+      ],
+      "requisitos": ["CI0200", "CI0202"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "CI1231",
+      "nombre": "Ingles II",
+      "creditos": 2,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 10,
+          "bloques": [
+            {"dia": "MIE", "inicio": "16:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 11,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MAR", "inicio": "13:00", "fin": "15:50"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MAR", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 8,
+          "bloques": [
+            {"dia": "VIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 9,
+          "bloques": [
+            {"dia": "VIE", "inicio": "13:00", "fin": "15:50"}
+          ]
+        }
+      ],
+      "requisitos": ["CI1230"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "CS2101",
+      "nombre": "Ambiente humano",
+      "creditos": 2,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "VIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MIE", "inicio": "15:00", "fin": "17:50"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "12:20"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "10:20"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "LUN", "inicio": "18:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 8,
+          "bloques": [
+            {"dia": "MAR", "inicio": "18:00", "fin": "20:50"}
+          ]
+        }
+      ],
+      "requisitos": ["CI1107"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC1400",
+      "nombre": "Fundamentos de organizacion de computadoras",
+      "creditos": 3,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "JUE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": "MA1403",
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC1802",
+      "nombre": "Introduccion a la programacion",
+      "creditos": 3,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC2001",
+      "nombre": "Estructuras de datos",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "VIE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"},
+            {"dia": "JUE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": "IC2101",
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC2101",
+      "nombre": "Programacion orientada a objetos",
+      "creditos": 3,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "17:00", "fin": "18:50"},
+            {"dia": "VIE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "17:00", "fin": "20:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "JUE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": ["Null"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC3002",
+      "nombre": "Analisis de algoritmos",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"},
+            {"dia": "JUE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": ["Null"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC3101",
+      "nombre": "Arquitectura de computadores",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "VIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        }
+      ],
+      "requisitos": ["Null"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC4301",
+      "nombre": "Bases de datos I",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": "MA1103",
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC4302",
+      "nombre": "Bases de datos II",
+      "creditos": 3,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"},
+            {"dia": "VIE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "19:00", "fin": "20:50"},
+            {"dia": "JUE", "inicio": "19:00", "fin": "20:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC4700",
+      "nombre": "Lenguajes de programacion",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": ["Null"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC5821",
+      "nombre": "Requerimientos de software",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": "IC4301",
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "IC6821",
+      "nombre": "Dise�o de software",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "19:00", "fin": "20:50"},
+            {"dia": "VIE", "inicio": "19:00", "fin": "20:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "MA1103",
+      "nombre": "Calculo y algebra lineal",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 10,
+          "bloques": [
+            {"dia": "JUE", "inicio": "18:00", "fin": "19:50"},
+            {"dia": "MAR", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 11,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 12,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 13,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "VIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 14,
+          "bloques": [
+            {"dia": "MIE", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "VIE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 15,
+          "bloques": [
+            {"dia": "MIE", "inicio": "16:00", "fin": "17:50"},
+            {"dia": "VIE", "inicio": "16:00", "fin": "17:50"}
+          ]
+        },
+        {
+          "numero": 16,
+          "bloques": [
+            {"dia": "MIE", "inicio": "17:00", "fin": "18:50"},
+            {"dia": "VIE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 17,
+          "bloques": [
+            {"dia": "MIE", "inicio": "18:00", "fin": "19:50"},
+            {"dia": "VIE", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 18,
+          "bloques": [
+            {"dia": "SAB", "inicio": "07:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 19,
+          "bloques": [
+            {"dia": "JUE", "inicio": "07:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "MAR", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "MAR", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"}
+          ]
+        }
+      ],
+      "requisitos": ["MA1102"],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": false
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "MA1403",
+      "nombre": "Matematica discreta",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"},
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "JUE", "inicio": "18:00", "fin": "19:50"},
+            {"dia": "MAR", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 4,
+          "bloques": [
+            {"dia": "JUE", "inicio": "13:00", "fin": "14:50"},
+            {"dia": "MAR", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "MA2404",
+      "nombre": "Probabilidades",
+      "creditos": 4,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"},
+            {"dia": "VIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "18:00", "fin": "19:50"},
+            {"dia": "JUE", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 3,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"},
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1101",
+      "nombre": "Artes dramaticas",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1102",
+      "nombre": "Accion social",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1103",
+      "nombre": "Danza",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1104",
+      "nombre": "Artes visuales",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1105",
+      "nombre": "Artes musicales",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MAR", "inicio": "17:00", "fin": "18:50"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "JUE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "JUE", "inicio": "18:00", "fin": "19:50"}
+          ]
+        },
+        {
+          "numero": 8,
+          "bloques": [
+            {"dia": "VIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1106",
+      "nombre": "Apreciacion literaria",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1107",
+      "nombre": "Apreciacion de cine",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "VIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1109",
+      "nombre": "Dinomica de la cultura",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1201",
+      "nombre": "Atletismo",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MIE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1204",
+      "nombre": "Natacion",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "LUN", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "MIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "MIE", "inicio": "15:00", "fin": "16:50"}
+          ]
+        },
+        {
+          "numero": 8,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 9,
+          "bloques": [
+            {"dia": "JUE", "inicio": "17:00", "fin": "18:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1205",
+      "nombre": "Juegos y deportes en conjunto",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "JUE", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 7,
+          "bloques": [
+            {"dia": "JUE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1206",
+      "nombre": "Acondicionamiento fosico",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 5,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 6,
+          "bloques": [
+            {"dia": "VIE", "inicio": "13:00", "fin": "14:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1209",
+      "nombre": "Boisbol-softbol",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1218",
+      "nombre": "Ajedrez",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1219",
+      "nombre": "Baloncesto recreativo",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "LUN", "inicio": "07:30", "fin": "09:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "MAR", "inicio": "15:00", "fin": "16:50"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1221",
+      "nombre": "Futbol I",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MAR", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    },
+    {
+      "carrera": "Ingeniería Computacion",
+      "codigo": "SE1222",
+      "nombre": "Futbol sala",
+      "creditos": 0,
+      "grupos": [
+        {
+          "numero": 1,
+          "bloques": [
+            {"dia": "MIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        },
+        {
+          "numero": 2,
+          "bloques": [
+            {"dia": "VIE", "inicio": "09:30", "fin": "11:20"}
+          ]
+        }
+      ],
+      "requisitos": [],
+      "correquisito": null,
+      "choca_con_alguno": true,
+      "puede_matricular": true
+    }
   ]
 }
