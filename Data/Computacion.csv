@@ -1,0 +1,177 @@
+CODIGO,NOMBRE,GRUPO,CREDITOS,DIA_1,INICIO_1,FIN_1,DIA_2,INICIO_2,FIN_2,REQUISITO_1,REQUISITO_2,REQUISITO_3,CORREQUISISTO
+CI1106,Comunicacion escrita,1,2,LUN,18:00,20:50,Null,Null,Null,Null,Null,Null,Null
+CI1106,Comunicacion escrita,2,2,MAR,13:00,15:50,Null,Null,Null,Null,Null,Null,Null
+CI1106,Comunicacion escrita,3,2,MIE,13:00,15:50,Null,Null,Null,Null,Null,Null,Null
+CI1106,Comunicacion escrita,4,2,JUE,09:30,12:20,Null,Null,Null,Null,Null,Null,Null
+CI1106,Comunicacion escrita,5,2,MIE,09:30,12:20,Null,Null,Null,Null,Null,Null,Null
+CI1107,Comunicacion escrita,1,1,LUN,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,10,1,MAR,16:00,18:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,11,1,MAR,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,12,1,MIE,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,13,1,MIE,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,14,1,MIE,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,15,1,MIE,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,16,1,MIE,16:00,18:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,17,1,MIE,17:00,19:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,18,1,MIE,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,19,1,JUE,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,2,1,LUN,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,20,1,JUE,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,21,1,JUE,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,22,1,JUE,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,23,1,JUE,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,24,1,JUE,15:00,17:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,25,1,JUE,17:00,19:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,26,1,JUE,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,27,1,VIE,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,28,1,VIE,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,29,1,VIE,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,3,1,LUN,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,30,1,VIE,17:00,19:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,31,1,VIE,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,32,1,VIE,16:00,18:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,33,1,VIE,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,4,1,LUN,18:00,20:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,5,1,MAR,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,6,1,MAR,07:30,10:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,7,1,MAR,09:30,12:20,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,8,1,MAR,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1107,Comunicacion escrita,9,1,MAR,13:00,15:50,Null,Null,Null,CI1106,Null,Null,Null
+CI1230,Ingles I,1,2,LUN,07:30,10:20,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,10,2,JUE,18:00,20:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,11,2,VIE,13:00,15:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,2,2,MAR,07:30,10:20,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,3,2,MAR,09:30,12:20,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,4,2,JUE,09:30,12:20,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,5,2,MIE,13:00,15:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,6,2,MAR,15:00,17:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,7,2,MIE,09:30,12:20,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,8,2,MIE,18:00,20:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1230,Ingles I,9,2,JUE,13:00,15:50,Null,Null,Null,CI0200,CI0202,Null,Null
+CI1231,Ingles II,1,2,LUN,09:30,12:20,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,10,2,MIE,16:00,18:50,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,11,2,MIE,13:00,15:50,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,2,2,LUN,18:00,20:50,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,3,2,MAR,07:30,10:20,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,4,2,MAR,13:00,15:50,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,5,2,MAR,18:00,20:50,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,6,2,MIE,09:30,12:20,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,7,2,JUE,09:30,12:20,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,8,2,VIE,09:30,12:20,Null,Null,Null,CI1230,Null,Null,Null
+CI1231,Ingles II,9,2,VIE,13:00,15:50,Null,Null,Null,CI1230,Null,Null,Null
+CS2101,Ambiente humano,1,2,VIE,09:30,12:20,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,2,2,MAR,09:30,12:20,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,3,2,MIE,09:30,12:20,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,4,2,MIE,15:00,17:50,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,5,2,JUE,09:30,12:20,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,6,2,LUN,07:30,10:20,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,7,2,LUN,18:00,20:50,Null,Null,Null,CI1107,Null,Null,Null
+CS2101,Ambiente humano,8,2,MAR,18:00,20:50,Null,Null,Null,CI1107,Null,Null,Null
+IC1400,Fundamentos de organizacion de computadoras,1,3,LUN,07:30,09:20,MIE,07:30,09:20,Null,Null,Null,MA1403
+IC1400,Fundamentos de organizacion de computadoras,2,3,LUN,07:30,11:20,Null,Null,Null,Null,Null,Null,MA1403
+IC1400,Fundamentos de organizacion de computadoras,3,3,MAR,13:00,14:50,JUE,13:00,14:50,Null,Null,Null,MA1403
+IC1802,Introduccion a la programacion,1,3,MAR,07:30,09:20,JUE,07:30,09:20,Null,Null,Null,Null
+IC1802,Introduccion a la programacion,2,3,MAR,07:30,09:20,JUE,07:30,09:20,Null,Null,Null,Null
+IC1802,Introduccion a la programacion,3,3,MAR,07:30,09:20,JUE,07:30,09:20,Null,Null,Null,Null
+IC1802,Introduccion a la programacion,4,3,MIE,07:30,09:20,VIE,07:30,09:20,Null,Null,Null,Null
+IC2001,Estructuras de datos,1,4,MAR,15:00,16:50,JUE,15:00,16:50,Null,Null,Null,IC2101
+IC2001,Estructuras de datos,2,4,MIE,15:00,16:50,VIE,15:00,16:50,Null,Null,Null,IC2101
+IC2001,Estructuras de datos,3,4,MAR,17:00,18:50,JUE,17:00,18:50,Null,Null,Null,IC2101
+IC2001,Estructuras de datos,4,4,MAR,07:30,09:20,JUE,07:30,09:20,Null,Null,Null,IC2101
+IC2101,Programacion orientada a objetos,1,3,MIE,17:00,18:50,VIE,17:00,18:50,Null,IC1803,Null,Null
+IC2101,Programacion orientada a objetos,2,3,MIE,17:00,20:50,Null,Null,Null,Null,IC1803,Null,Null
+IC2101,Programacion orientada a objetos,3,3,MAR,13:00,14:50,JUE,13:00,14:50,Null,IC1803,Null,Null
+IC2101,Programacion orientada a objetos,4,3,MIE,07:30,09:20,VIE,07:30,09:20,Null,IC1803,Null,Null
+IC3002,Analisis de algoritmos,1,4,MAR,15:00,16:50,JUE,15:00,16:50,Null,MA1102,Null,Null
+IC3002,Analisis de algoritmos,2,4,MAR,17:00,18:50,JUE,17:00,18:50,Null,MA1102,Null,Null
+IC3002,Analisis de algoritmos,3,4,MIE,09:30,11:20,VIE,09:30,11:20,Null,MA1102,Null,Null
+IC3101,Arquitectura de computadores,1,4,MAR,09:30,11:20,JUE,09:30,11:20,Null, IC1803,Null,Null
+IC3101,Arquitectura de computadores,2,4,MAR,07:30,09:20,JUE,07:30,09:20,Null, IC1803,Null,Null
+IC3101,Arquitectura de computadores,3,4,MAR,09:30,11:20,JUE,09:30,11:20,Null, IC1803,Null,Null
+IC3101,Arquitectura de computadores,4,4,MIE,13:00,14:50,VIE,13:00,14:50,Null, IC1803,Null,Null
+IC4301,Bases de datos I,1,4,MIE,07:30,09:20,VIE,07:30,09:20,Null,Null,Null,MA1103
+IC4301,Bases de datos I,2,4,MIE,09:30,11:20,VIE,09:30,11:20,Null,Null,Null,MA1103
+IC4301,Bases de datos I,3,4,MAR,15:00,16:50,JUE,15:00,16:50,Null,Null,Null,MA1103
+IC4302,Bases de datos II,1,3,MAR,17:00,18:50,VIE,17:00,18:50,Null,Null,Null,Null
+IC4302,Bases de datos II,2,3,MAR,19:00,20:50,JUE,19:00,20:50,Null,Null,Null,Null
+IC4700,Lenguajes de programacion,1,4,MIE,07:30,11:20,Null,Null,Null,Null,IC3101,Null,Null
+IC4700,Lenguajes de programacion,2,4,MAR,09:30,11:20,JUE,09:30,11:20,Null,IC3101,Null,Null
+IC5821,Requerimientos de software,1,4,MAR,07:30,09:20,JUE,07:30,09:20,Null,Null,Null,IC4301
+IC5821,Requerimientos de software,2,4,LUN,07:30,11:20,Null,Null,Null,Null,Null,Null,IC4301
+IC5821,Requerimientos de software,3,4,MAR,09:30,11:20,JUE,09:30,11:20,Null,Null,Null,IC4301
+IC6821,Dise�o de software,1,4,MIE,09:30,11:20,VIE,09:30,11:20,Null,Null,Null,Null
+IC6821,Dise�o de software,2,4,MIE,19:00,20:50,VIE,19:00,20:50,Null,Null,Null,Null
+MA1103,Calculo y algebra lineal,1,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,10,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,11,4,MIE,07:30,09:20,VIE,07:30,09:20,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,12,4,MIE,09:30,11:20,VIE,09:30,11:20,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,13,4,MIE,13:00,14:50,VIE,13:00,14:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,14,4,MIE,15:00,16:50,VIE,15:00,16:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,15,4,MIE,16:00,17:50,VIE,16:00,17:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,16,4,MIE,17:00,18:50,VIE,17:00,18:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,17,4,MIE,18:00,19:50,VIE,18:00,19:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,18,4,SAB,07:30,11:20,Null,Null,Null,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,19,4,JUE,07:30,11:20,Null,Null,Null,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,2,4,JUE,07:30,09:20,MAR,07:30,09:20,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,3,4,JUE,09:30,11:20,MAR,09:30,11:20,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,4,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,5,4,JUE,13:00,14:50,MAR,13:00,14:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,6,4,JUE,15:00,16:50,MAR,15:00,16:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,7,4,JUE,16:00,17:50,MAR,16:00,17:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,8,4,JUE,17:00,18:50,MAR,17:00,18:50,MA1102,Null,Null,Null
+MA1103,Calculo y algebra lineal,9,4,JUE,18:00,19:50,MAR,18:00,19:50,MA1102,Null,Null,Null
+MA1403,Matematica discreta,1,4,MIE,07:30,09:20,VIE,07:30,09:20,Null,Null,Null,Null
+MA1403,Matematica discreta,2,4,MIE,09:30,11:20,VIE,09:30,11:20,Null,Null,Null,Null
+MA1403,Matematica discreta,3,4,JUE,18:00,19:50,MAR,18:00,19:50,Null,Null,Null,Null
+MA1403,Matematica discreta,4,4,JUE,13:00,14:50,MAR,13:00,14:50,Null,Null,Null,Null
+MA1403,Matematica discreta,5,4,JUE,15:00,16:50,MAR,15:00,16:50,Null,Null,Null,Null
+MA1403,Matematica discreta,6,4,MIE,07:30,09:20,VIE,07:30,09:20,Null,Null,Null,Null
+MA2404,Probabilidades,1,4,MIE,07:30,09:20,VIE,07:30,09:20,Null,Null,Null,Null
+MA2404,Probabilidades,2,4,MAR,18:00,19:50,JUE,18:00,19:50,Null,Null,Null,Null
+MA2404,Probabilidades,3,4,MAR,15:00,16:50,JUE,15:00,16:50,Null,Null,Null,Null
+SE1101,Artes dramaticas,1,0,LUN,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1101,Artes dramaticas,2,0,MAR,17:00,18:50,Null,Null,Null,Null,Null,Null,Null
+SE1102,Accion social,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1102,Accion social,2,0,LUN,18:00,19:50,Null,Null,Null,Null,Null,Null,Null
+SE1102,Accion social,5,0,MIE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1102,Accion social,6,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1103,Danza,1,0,JUE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1104,Artes visuales,1,0,LUN,17:00,18:50,Null,Null,Null,Null,Null,Null,Null
+SE1104,Artes visuales,2,0,MAR,17:00,18:50,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,2,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,5,0,MAR,17:00,18:50,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,6,0,JUE,15:00,16:50,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,7,0,JUE,18:00,19:50,Null,Null,Null,Null,Null,Null,Null
+SE1105,Artes musicales,8,0,VIE,13:00,14:50,Null,Null,Null,Null,Null,Null,Null
+SE1106,Apreciacion literaria,1,0,MAR,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1107,Apreciacion de cine,1,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1107,Apreciacion de cine,2,0,VIE,13:00,14:50,Null,Null,Null,Null,Null,Null,Null
+SE1109,Dinomica de la cultura,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1109,Dinomica de la cultura,2,0,MIE,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1201,Atletismo,1,0,MAR,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1201,Atletismo,2,0,MIE,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,2,0,LUN,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,5,0,MIE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,6,0,MIE,13:00,14:50,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,7,0,MIE,15:00,16:50,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,8,0,JUE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1204,Natacion,9,0,JUE,17:00,18:50,Null,Null,Null,Null,Null,Null,Null
+SE1205,Juegos y deportes en conjunto,1,0,LUN,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1205,Juegos y deportes en conjunto,2,0,MAR,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1205,Juegos y deportes en conjunto,5,0,MIE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1205,Juegos y deportes en conjunto,6,0,JUE,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1205,Juegos y deportes en conjunto,7,0,JUE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1206,Acondicionamiento fosico,1,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1206,Acondicionamiento fosico,2,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1206,Acondicionamiento fosico,5,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1206,Acondicionamiento fosico,6,0,VIE,13:00,14:50,Null,Null,Null,Null,Null,Null,Null
+SE1209,Boisbol-softbol,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1209,Boisbol-softbol,2,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1218,Ajedrez,1,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1219,Baloncesto recreativo,1,0,LUN,07:30,09:20,Null,Null,Null,Null,Null,Null,Null
+SE1219,Baloncesto recreativo,2,0,MAR,15:00,16:50,Null,Null,Null,Null,Null,Null,Null
+SE1221,Futbol I,1,0,MAR,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1222,Futbol sala,1,0,MIE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null
+SE1222,Futbol sala,2,0,VIE,09:30,11:20,Null,Null,Null,Null,Null,Null,Null

@@ -78,6 +78,11 @@ static void escribir_grupo(FILE *f, const Grupo *g, int indent) {
 static void escribir_curso(FILE *f, const Curso *c, int indent) {
     fprintf(f, "%*s{\n", indent, "");
 
+    // escribe cada atributo en el json
+    fprintf(f, "%*s\"carrera\": ", indent + 2, "");
+    escribir_json_string(f, c->carrera);
+    fprintf(f, ",\n");
+
     fprintf(f, "%*s\"codigo\": ", indent + 2, "");
     escribir_json_string(f, c->codigo);
     fprintf(f, ",\n");

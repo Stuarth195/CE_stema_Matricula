@@ -4,6 +4,29 @@
 #include "constants.h"
 #include "consultant.h"
 
+// Función auxiliar para extraer el nombre de la carrera a partir de la ruta del archivo
+static void extraer_carrera_de_ruta(const char *ruta, char *carrera_out, size_t tam_out) {
+    const char *ultimo_slash = strrchr(ruta, '\\');
+    const char *ultimo_slash2 = strrchr(ruta, '/');
+    if (ultimo_slash2 != NULL && (ultimo_slash == NULL || ultimo_slash2 > ultimo_slash)) {
+        ultimo_slash = ultimo_slash2;
+    }
+
+    const char *nombre_archivo = (ultimo_slash != NULL) ? ultimo_slash + 1 : ruta;
+
+    char temp[100];
+    strncpy(temp, nombre_archivo, sizeof(temp) - 1);
+    temp[sizeof(temp) - 1] = '\0';
+
+    // Quitar la extensión (.csv)
+    char *punto = strrchr(temp, '.');
+    if (punto != NULL) {
+        *punto = '\0';
+    }
+
+    // Formatear el string final como "Ingeniería <Nombre>"
+    snprintf(carrera_out, tam_out, "Ingeniería %s", temp);
+}
 
 static void copy_field(char *dest, size_t dest_size, const char *src) {
     if (src == NULL) {
@@ -137,9 +160,12 @@ static void update_course_metadata(Curso *curso, const char fields[CSV_FIELD_COU
 }
 
 void load_courses_from_csv(const char *path, Curso *cursos, size_t *count) {
+
     FILE *file = fopen(path, "r");
     char line[MAX_LINE_LENGTH];
     char fields[CSV_FIELD_COUNT][CSV_FIELD_SIZE];
+    char nombre_carrera[50]; // Requerimiento parte 2 
+    extraer_carrera_de_ruta(path, nombre_carrera, sizeof(nombre_carrera));// funcion auxiliar 
 
     if (file == NULL) {
         perror("No se pudo abrir el archivo CSV");
@@ -173,6 +199,7 @@ void load_courses_from_csv(const char *path, Curso *cursos, size_t *count) {
             curso = &cursos[*count];
             memset(curso, 0, sizeof(*curso));
             copy_field(curso->codigo, sizeof(curso->codigo), fields[0]);
+            copy_field(curso->carrera, sizeof(curso->carrera), nombre_carrera);
             (*count)++;
         }
 
@@ -207,3 +234,4 @@ void load_courses_from_csv(const char *path, Curso *cursos, size_t *count) {
 
     fclose(file);
 }
+
