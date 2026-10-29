@@ -56,5 +56,6 @@ dkms.conf
 
 #Vscode config
 *.vscode
+.bak
 
 main
