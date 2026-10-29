@@ -112,21 +112,55 @@ read-json funcion de racket lee la entrada pasada por (call-with-input-file) y l
            choca-extraido
            puede-matricular-extraido)))
 
+;; 4. Función que parsea un curso de interés individual
+(: parsear-curso-interes (-> Any Curso-Interes))
+(define (parsear-curso-interes objeto-json-curso-interes)
+  (let* ([objeto-ci-json (if (hash? objeto-json-curso-interes) objeto-json-curso-interes #hasheq())]
+         
+         ;; Extracción y validación del código del curso
+         [codigo-en-bruto (hash-ref objeto-ci-json 'codigo (lambda () ""))]
+         [codigo-extraido (if (string? codigo-en-bruto) codigo-en-bruto "")]
+         
+         ;; Extracción de la lista de grupos de interés (validando enteros)
+         [grupos-en-bruto (hash-ref objeto-ci-json 'grupos (lambda () '()))]
+         [lista-grupos-json (if (list? grupos-en-bruto) grupos-en-bruto '())]
+         [lista-grupos-extraidos (filter exact-integer? lista-grupos-json)])
+    
+    ;; Construcción final de la estructura tipada Curso-Interes
+    (Curso-Interes codigo-extraido lista-grupos-extraidos)))
 
+;; 5. Función que parsea la preferencia completa del estudiante
+(: parsear-preferencia (-> Any Preferencia))
+(define (parsear-preferencia objeto-json-preferencia)
+  (let* ([objeto-pref-json (if (hash? objeto-json-preferencia) objeto-json-preferencia #hasheq())]
+         
+         ;; Extracción y validación del carnet
+         [carnet-en-bruto (hash-ref objeto-pref-json 'carnet (lambda () ""))]
+         [carnet-extraido (if (string? carnet-en-bruto) carnet-en-bruto "")]
+         
+         ;; Extracción de los cursos de interés
+         [cursos-en-bruto (hash-ref objeto-pref-json 'cursos_interes (lambda () '()))]
+         [lista-cursos-json (if (list? cursos-en-bruto) cursos-en-bruto '())]
+         [cursos-interes-extraidos (map parsear-curso-interes lista-cursos-json)]
+         
+         ;; Extracción de créditos mínimos
+         [cmin-en-bruto (hash-ref objeto-pref-json 'creditos_min (lambda () 0))]
+         [creditos-min-extraidos (if (exact-integer? cmin-en-bruto) cmin-en-bruto 0)]
+         
+         ;; Extracción de créditos máximos
+         [cmax-en-bruto (hash-ref objeto-pref-json 'creditos_max (lambda () 0))]
+         [creditos-max-extraidos (if (exact-integer? cmax-en-bruto) cmax-en-bruto 0)])
+    
+    ;; Construcción final de la estructura tipada Preferencia
+    (Preferencia carnet-extraido
+                 cursos-interes-extraidos
+                 creditos-min-extraidos
+                 creditos-max-extraidos)))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+;; 6. Función pública para leer el archivo JSON de preferencias del estudiante
+(: leer-preferencias-estudiante (-> String Preferencia))
+(define (leer-preferencias-estudiante ruta-archivo)
+  (parsear-preferencia (leer-json-intermedio ruta-archivo)))
 
 
 

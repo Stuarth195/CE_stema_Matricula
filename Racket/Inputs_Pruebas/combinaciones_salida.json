@@ -1,0 +1,173 @@
+[
+  {
+    "pares": [
+      {
+        "grupo": {
+          "bloques": [
+            {
+              "dia": "Lunes",
+              "fin": "09:20",
+              "inicio": "07:30"
+            },
+            {
+              "dia": "Miércoles",
+              "fin": "09:20",
+              "inicio": "07:30"
+            }
+          ],
+          "numero": 1
+        },
+        "curso": {
+          "creditos": 4,
+          "puede_matricular": 1,
+          "nombre": "Cálculo II",
+          "requisitos": [
+            "MA1101"
+          ],
+          "carrera": "Ingeniería en Computadores",
+          "correquisito": 0,
+          "codigo": "MA1102",
+          "choca_con_alguno": 0,
+          "grupos": [
+            {
+              "bloques": [
+                {
+                  "dia": "Lunes",
+                  "fin": "09:20",
+                  "inicio": "07:30"
+                },
+                {
+                  "dia": "Miércoles",
+                  "fin": "09:20",
+                  "inicio": "07:30"
+                }
+              ],
+              "numero": 1
+            }
+          ]
+        }
+      },
+      {
+        "grupo": {
+          "bloques": [
+            {
+              "dia": "Viernes",
+              "fin": "15:50",
+              "inicio": "13:00"
+            }
+          ],
+          "numero": 1
+        },
+        "curso": {
+          "creditos": 4,
+          "puede_matricular": 1,
+          "nombre": "Física I",
+          "requisitos": [
+            "MA1101"
+          ],
+          "carrera": "Ingeniería en Computadores",
+          "correquisito": "FI1102",
+          "codigo": "FI1101",
+          "choca_con_alguno": 0,
+          "grupos": [
+            {
+              "bloques": [
+                {
+                  "dia": "Viernes",
+                  "fin": "15:50",
+                  "inicio": "13:00"
+                }
+              ],
+              "numero": 1
+            }
+          ]
+        }
+      },
+      {
+        "grupo": {
+          "bloques": [
+            {
+              "dia": "Miércoles",
+              "fin": "17:00",
+              "inicio": "13:00"
+            }
+          ],
+          "numero": 1
+        },
+        "curso": {
+          "creditos": 3,
+          "puede_matricular": 1,
+          "nombre": "Química General I",
+          "requisitos": [
+          ],
+          "carrera": "Ingeniería en Computadores",
+          "correquisito": 0,
+          "codigo": "QU1101",
+          "choca_con_alguno": 0,
+          "grupos": [
+            {
+              "bloques": [
+                {
+                  "dia": "Miércoles",
+                  "fin": "17:00",
+                  "inicio": "13:00"
+                }
+              ],
+              "numero": 1
+            }
+          ]
+        }
+      },
+      {
+        "grupo": {
+          "bloques": [
+            {
+              "dia": "Martes",
+              "fin": "11:20",
+              "inicio": "09:30"
+            },
+            {
+              "dia": "Jueves",
+              "fin": "11:20",
+              "inicio": "09:30"
+            }
+          ],
+          "numero": 1
+        },
+        "curso": {
+          "creditos": 4,
+          "puede_matricular": 1,
+          "nombre": "Taller de Programación",
+          "requisitos": [
+            "IC1802"
+          ],
+          "carrera": "Ingeniería en Computadores",
+          "correquisito": 0,
+          "codigo": "IC1803",
+          "choca_con_alguno": 0,
+          "grupos": [
+            {
+              "bloques": [
+                {
+                  "dia": "Martes",
+                  "fin": "11:20",
+                  "inicio": "09:30"
+                },
+                {
+                  "dia": "Jueves",
+                  "fin": "11:20",
+                  "inicio": "09:30"
+                }
+              ],
+              "numero": 1
+            }
+          ]
+        }
+      }
+    ],
+    "creditos_totales": 15,
+    "carreras_origen": [
+      "Ingeniería en Computadores"
+    ]
+  }
+]
