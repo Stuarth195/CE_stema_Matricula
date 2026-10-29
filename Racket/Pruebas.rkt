@@ -4,64 +4,144 @@
 (require "Estructuras.rkt")
 (require "Importar.rkt")
 
-;; --- PRUEBA AISLADA PARA HORARIOS ---
+;; ============================================================
+;; PRUEBAS DE IMPORTACION DESDE EL JSON REAL GENERADO POR C
+;;
+;; Este archivo no modifica el JSON ni los modulos importados.
+;; Pruebas disponibles: Horario-info, Grupo y Curso (general).
+;;
+;; Ejecutar todas:       racket Pruebas.rkt
+;; Ejecutar una sola:    racket Pruebas.rkt horario
+;;                       racket Pruebas.rkt grupo
+;;                       racket Pruebas.rkt curso
+;; ============================================================
 
-;; Función para imprimir en consola los detalles de una estructura Horario-info
-(: imprimir-horario-info (-> Horario-info Void))
-(define (imprimir-horario-info horario-a-imprimir)
-  (let* ([dia-del-horario (Horario-info-dia horario-a-imprimir)]
-         [hora-de-inicio (Horario-info-inicio horario-a-imprimir)]
-         [hora-de-fin (Horario-info-fin horario-a-imprimir)])
-    
-    (printf "-> [Horario] Día: ~a | Inicio: ~a | Fin: ~a\n"
-            (if dia-del-horario dia-del-horario "No asignado")
-            (if hora-de-inicio hora-de-inicio "No asignado")
-            (if hora-de-fin hora-de-fin "No asignado"))))
+;; Ruta original del archivo JSON exportado por el programa en C.
+(: ruta-archivo String)
+(define ruta-archivo
+  "C:/Users/shoko/OneDrive/Attachments/Documents/GitHub/CE_stema_Matricula/catalogo_salida.json")
 
-;; Ruta del archivo JSON exportado por C
-(define ruta-archivo "C:/Users/shoko/OneDrive/Attachments/Documents/GitHub/CE_stema_Matricula/catalogo_salida.json")
+;; Muestra el nombre de la prueba antes de imprimir resultados.
+(: mostrar-encabezado (-> String Void))
+(define (mostrar-encabezado nombre)
+  (newline)
+  (displayln "============================================================")
+  (printf "  ~a\n" nombre)
+  (displayln "============================================================"))
 
-;; 1. Leemos el JSON intermedio asegurando que sea un hash
-(define json-datos 
+;; Obtiene una lista asociada a una clave de un objeto JSON.
+;; Si la clave falta o no contiene una lista, devuelve una lista vacia.
+(: obtener-lista-json (-> Any Symbol (Listof Any)))
+(define (obtener-lista-json objeto clave)
+  (if (hash? objeto)
+      (let ([valor (hash-ref objeto clave (lambda () '()))])
+        (if (list? valor) valor '()))
+      '()))
+
+;; Exige un objeto JSON real: no fabrica datos de prueba si falta.
+(: primer-objeto-json (-> (Listof Any) String Any))
+(define (primer-objeto-json elementos descripcion)
+  (cond
+    [(null? elementos)
+     (error 'Pruebas (format "No se encontraron ~a en el JSON." descripcion))]
+    [(hash? (car elementos)) (car elementos)]
+    [else
+     (error 'Pruebas
+            (format "El primer elemento de ~a no es un objeto JSON." descripcion))]))
+
+;; Lee el JSON una sola vez para las tres pruebas.
+(: cargar-json (-> Any))
+(define (cargar-json)
+  (unless (file-exists? ruta-archivo)
+    (error 'Pruebas
+           (format "No existe el archivo JSON en la ruta:\n~a" ruta-archivo)))
   (let ([datos (leer-json-intermedio ruta-archivo)])
-    (if (hash? datos) datos #hasheq())))
+    (unless (hash? datos)
+      (error 'Pruebas "La raiz del archivo JSON debe ser un objeto."))
+    datos))
 
-;; 2. Extracción segura y tipada de los cursos
-(define lista-cursos 
-  (let ([c (hash-ref json-datos 'cursos (lambda () '()))])
-    (if (list? c) c '())))
+;; Imprime los atributos del horario para facilitar su inspeccion.
+(: imprimir-horario-info (-> Horario-info Void))
+(define (imprimir-horario-info horario)
+  (printf "Dia: ~a | Inicio: ~a | Fin: ~a\n"
+          (or (Horario-info-dia horario) "No asignado")
+          (or (Horario-info-inicio horario) "No asignado")
+          (or (Horario-info-fin horario) "No asignado")))
 
-(define primer-curso 
-  (if (not (null? lista-cursos))
-      (let ([elem (car lista-cursos)])
-        (if (hash? elem) elem #hasheq()))
-      #hasheq()))
+;; ------------------------------------------------------------
+;; PRUEBA 1: HORARIO-INFO INDIVIDUAL
+;; Extrae el primer bloque del primer grupo del primer curso.
+;; ------------------------------------------------------------
+(: prueba-horario (-> Any Void))
+(define (prueba-horario datos)
+  (mostrar-encabezado "PRUEBA 1/3 - HORARIO-INFO (INDIVIDUAL)")
+  (let* ([curso-json (primer-objeto-json (obtener-lista-json datos 'cursos)
+                                         "cursos")]
+         [grupo-json (primer-objeto-json (obtener-lista-json curso-json 'grupos)
+                                         "grupos del primer curso")]
+         [bloque-json (primer-objeto-json (obtener-lista-json grupo-json 'bloques)
+                                          "bloques del primer grupo")]
+         [horario (parsear-horario-info bloque-json)])
+    (displayln "Objeto Horario-info importado:")
+    (displayln horario)
+    (imprimir-horario-info horario)
+    (displayln "--- FIN DE PRUEBA 1 ---")))
 
-;; 3. Extracción segura y tipada de los grupos
-(define lista-grupos 
-  (let ([g (hash-ref primer-curso 'grupos (lambda () '()))])
-    (if (list? g) g '())))
+;; ------------------------------------------------------------
+;; PRUEBA 2: GRUPO INDIVIDUAL
+;; Imprime solo el objeto Grupo (incluidos todos sus horarios).
+;; ------------------------------------------------------------
+(: prueba-grupo (-> Any Void))
+(define (prueba-grupo datos)
+  (mostrar-encabezado "PRUEBA 2/3 - GRUPO (INDIVIDUAL)")
+  (let* ([curso-json (primer-objeto-json (obtener-lista-json datos 'cursos)
+                                         "cursos")]
+         [grupo-json (primer-objeto-json (obtener-lista-json curso-json 'grupos)
+                                         "grupos del primer curso")]
+         [grupo (parsear-grupo grupo-json)])
+    (displayln "Objeto Grupo importado:")
+    (displayln grupo)
+    (displayln "--- FIN DE PRUEBA 2 ---")))
 
-(define primer-grupo 
-  (if (not (null? lista-grupos))
-      (let ([elem (car lista-grupos)])
-        (if (hash? elem) elem #hasheq()))
-      #hasheq()))
+;; ------------------------------------------------------------
+;; PRUEBA 3: CURSO GENERAL
+;; Imprime el objeto Curso con sus grupos, horarios y demas datos.
+;; ------------------------------------------------------------
+(: prueba-curso (-> Any Void))
+(define (prueba-curso datos)
+  (mostrar-encabezado "PRUEBA 3/3 - CURSO (GENERAL)")
+  (let* ([curso-json (primer-objeto-json (obtener-lista-json datos 'cursos)
+                                         "cursos")]
+         [curso (parsear-curso curso-json)])
+    (displayln "Objeto Curso completo importado:")
+    (displayln curso)
+    (displayln "--- FIN DE PRUEBA 3 ---")))
 
-;; 4. Extracción segura y tipada de los bloques horarios
-(define lista-bloques 
-  (let ([b (hash-ref primer-grupo 'bloques (lambda () '()))])
-    (if (list? b) b '())))
+;; Punto de entrada: por defecto se ejecutan las tres pruebas.
+;; Opcionalmente se puede elegir una desde la terminal.
+(module+ main
+  (define argumentos (current-command-line-arguments))
 
-(define primer-bloque-json 
-  (if (not (null? lista-bloques))
-      (let ([elem (car lista-bloques)])
-        (if (hash? elem) elem #hasheq((dia . "SAB") (inicio . "08:00") (fin . "11:00"))))
-      #hasheq((dia . "SAB") (inicio . "08:00") (fin . "11:00"))))
+  (: seleccion String)
+  (define seleccion
+    (if (zero? (vector-length argumentos))
+        "todas"
+        (vector-ref argumentos 0)))
 
-;; 5. Parseamos el bloque con nuestra función de horario
-(define horario-desde-json (parsear-horario-info primer-bloque-json))
+  (when (> (vector-length argumentos) 1)
+    (error 'Pruebas "Use: racket Pruebas.rkt [horario|grupo|curso|todas]"))
+  (unless (member seleccion '("horario" "grupo" "curso" "todas"))
+    (error 'Pruebas "Opcion invalida. Use horario, grupo, curso o todas."))
 
-;; 6. Imprimimos el resultado en consola
-(displayln "Prueba con horario extraído del JSON:")
-(imprimir-horario-info horario-desde-json)
+  (printf "Archivo JSON: ~a\n" ruta-archivo)
+  (let ([datos (cargar-json)])
+    (cond
+      [(string=? seleccion "horario") (prueba-horario datos)]
+      [(string=? seleccion "grupo")   (prueba-grupo datos)]
+      [(string=? seleccion "curso")   (prueba-curso datos)]
+      [else
+       (prueba-horario datos)
+       (prueba-grupo datos)
+       (prueba-curso datos)
+       (newline)
+       (displayln "=== FINALIZARON LAS TRES PRUEBAS ===")])))

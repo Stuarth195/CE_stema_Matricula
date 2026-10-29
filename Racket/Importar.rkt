@@ -6,9 +6,11 @@
 
 ;; Lee el archivo JSON y retorna la representación intermedia (hashes y listas)
 
-#| -> llamada remota que devuele un string y otro dato cualquiera (descripcion / caso base)
+#| 
+-> llamada remota que devuele un string y otro dato cualquiera (descripcion / caso base)
  call-with-input-file metodo de racket que lee el archivo de entrada y lo pasa como argumento a la funcion
-read-json funcion de racket lee la entrada pasada por (call-with-input-file) y lo parsea en formato hash|#
+read-json funcion de racket lee la entrada pasada por (call-with-input-file) y lo parsea en formato hash
+|#
 
 (: leer-json-intermedio (-> String Any)); Caso base
 
@@ -35,7 +37,80 @@ read-json funcion de racket lee la entrada pasada por (call-with-input-file) y l
     ;; Construcción final de la estructura tipada Horario-info
     (Horario-info dia-extraido hora-inicio-extraida hora-fin-extraida)))
 
+;; 2. Función que parsea y crea la información de un grupo (Grupo)
+;; Usa parsear-horario-info para convertir cada bloque del JSON en un Horario-info
+(: parsear-grupo (-> Any Grupo))
+(define (parsear-grupo objeto-json-grupo)
+  (let* ([objeto-grupo-json (if (hash? objeto-json-grupo) objeto-json-grupo #hasheq())]
 
+         ;; Extracción y validación del número de grupo
+         [numero-en-bruto (hash-ref objeto-grupo-json 'numero (lambda () #f))]
+         [numero-extraido (if (exact-integer? numero-en-bruto) numero-en-bruto 0)]
+
+         ;; Extracción y validación de la lista de bloques horarios
+         [bloques-en-bruto (hash-ref objeto-grupo-json 'bloques (lambda () '()))]
+         [lista-bloques-json (if (list? bloques-en-bruto) bloques-en-bruto '())]
+
+         ;; Cada bloque del JSON se convierte en un Horario-info
+         [lista-horarios-del-grupo (map parsear-horario-info lista-bloques-json)])
+
+    ;; Construcción final de la estructura tipada Grupo
+    (Grupo numero-extraido lista-horarios-del-grupo)))
+
+
+;; 3. Función que parsea y crea la información de un curso (Curso)
+;; Usa parsear-grupo para convertir cada grupo del JSON en un Grupo
+(: parsear-curso (-> Any Curso))
+(define (parsear-curso objeto-json-curso)
+  (let* ([objeto-curso-json (if (hash? objeto-json-curso) objeto-json-curso #hasheq())]
+
+         ;; Extracción y validación de la carrera
+         [carrera-en-bruto (hash-ref objeto-curso-json 'carrera (lambda () #f))]
+         [carrera-extraida (if (string? carrera-en-bruto) carrera-en-bruto "")]
+
+         ;; Extracción y validación del código
+         [codigo-en-bruto (hash-ref objeto-curso-json 'codigo (lambda () #f))]
+         [codigo-extraido (if (string? codigo-en-bruto) codigo-en-bruto "")]
+
+         ;; Extracción y validación del nombre
+         [nombre-en-bruto (hash-ref objeto-curso-json 'nombre (lambda () #f))]
+         [nombre-extraido (if (string? nombre-en-bruto) nombre-en-bruto "")]
+
+         ;; Extracción y validación de los créditos
+         [creditos-en-bruto (hash-ref objeto-curso-json 'creditos (lambda () #f))]
+         [creditos-extraidos (if (exact-integer? creditos-en-bruto) creditos-en-bruto 0)]
+
+         ;; Extracción de los grupos: cada elemento pasa por parsear-grupo
+         [grupos-en-bruto (hash-ref objeto-curso-json 'grupos (lambda () '()))]
+         [lista-grupos-json (if (list? grupos-en-bruto) grupos-en-bruto '())]
+         [lista-grupos-del-curso (map parsear-grupo lista-grupos-json)]
+
+         ;; Extracción de los requisitos: solo se conservan los elementos que sean String
+         [requisitos-en-bruto (hash-ref objeto-curso-json 'requisitos (lambda () '()))]
+         [lista-requisitos-json (if (list? requisitos-en-bruto) requisitos-en-bruto '())]
+         [lista-requisitos-extraidos (filter string? lista-requisitos-json)]
+
+         ;; Extracción del correquisito (String o #f cuando el JSON trae null)
+         [correquisito-en-bruto (hash-ref objeto-curso-json 'correquisito (lambda () #f))]
+         [correquisito-extraido (if (string? correquisito-en-bruto) correquisito-en-bruto #f)]
+
+         ;; Banderas calculadas por el módulo de C (las llaves del JSON usan guion bajo)
+         [choca-en-bruto (hash-ref objeto-curso-json 'choca_con_alguno (lambda () #f))]
+         [choca-extraido (eq? choca-en-bruto #t)]
+
+         [puede-matricular-en-bruto (hash-ref objeto-curso-json 'puede_matricular (lambda () #f))]
+         [puede-matricular-extraido (eq? puede-matricular-en-bruto #t)])
+
+    ;; Construcción final de la estructura tipada Curso(Lo arma)
+    (Curso carrera-extraida
+           codigo-extraido
+           nombre-extraido
+           creditos-extraidos
+           lista-grupos-del-curso
+           lista-requisitos-extraidos
+           correquisito-extraido
+           choca-extraido
+           puede-matricular-extraido)))
 
 
 
