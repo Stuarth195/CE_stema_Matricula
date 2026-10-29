@@ -22,11 +22,16 @@
                [choca-con-alguno : Boolean]
                [puede-matricular : Boolean]) #:transparent) 
 
-;; 4. Estructura para las preferencias del estudiante (Fase 2 / Fase 3)
+;; 4. Estructura actualizada para las preferencias del estudiante
 (struct Preferencia ([carnet : String]
-                     [cursos-interes : (Listof String)]
+                     [cursos-interes : (Listof Curso-Interes)]
                      [creditos-min : Integer]
                      [creditos-max : Integer]) #:transparent)
+                     
+;; 4.1 Estructura auxiliar para asociar un curso con los grupos de interés específicos
+(struct Curso-Interes ([codigo : String]
+                       [grupos : (Listof Integer)]) #:transparent)
+
 
 ;; 5. Estructura para las combinaciones válidas (Fase 3)
 (struct Combinacion ([pares : (Listof (Pairof Curso Grupo))]

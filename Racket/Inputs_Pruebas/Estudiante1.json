@@ -1,0 +1,15 @@
+{
+  "carnet": "2024123456",
+  "cursos_interes": [
+    {
+      "codigo": "IC1803",
+      "grupos": [1, 2]
+    },
+    {
+      "codigo": "IC2101",
+      "grupos": [1]
+    }
+  ],
+  "creditos_min": 10,
+  "creditos_max": 18
+}
