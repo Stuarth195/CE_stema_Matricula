@@ -98,7 +98,7 @@ Los argumentos posicionales se proporcionan en el siguiente orden:
 1. **Preferencias del estudiante:** archivo JSON que se convierte en una instancia de `Preferencia` mediante `leer-preferencias-estudiante`.
 2. **Catálogo de cursos:** archivo JSON generado en la etapa en C. Se extrae el arreglo `cursos` y cada elemento se transforma mediante `parsear-curso` para obtener una lista tipada `(Listof Curso)`; cada curso conserva sus grupos y bloques horarios.
 
-La versión integrada y probada imprime ambas estructuras en consola y muestra la cantidad de cursos importados. La incorporación de la generación de combinaciones y del filtrado está reservada para las partes B y C. Aunque `Output.rkt` ya implementa la exportación, la llamada desde `main.rkt` permanece deshabilitada hasta disponer de una lista real `(Listof Combinacion)`. **En este estado, la ejecución no genera un archivo JSON de salida ni requiere un tercer argumento.**
+La versión principal imprime ambas estructuras en consola y muestra la cantidad de cursos importados. La generación y el filtrado definitivos siguen reservados para las partes B y C; sus llamadas permanecen comentadas hasta disponer de las funciones reales de David y Claudio. `Output.rkt` recibe una secuencia `(Sequenceof Combinacion)` y puede exportarla directamente, sin convertirla en una lista completa. **La versión principal, con la integración definitiva comentada, no genera todavía el JSON de combinaciones y no requiere un tercer argumento.**
 
 #### 1.5.1 Compilación y ejecución en Windows (PowerShell)
 
@@ -130,6 +130,10 @@ racket .\main.rkt ".\Inputs_Pruebas\Estudiante1.json" "..\catalogo_salida.json"
 Para esta modalidad, se utiliza la terminal porque `main.rkt` necesita recibir los dos argumentos. Ejecutar **Run** en DrRacket sin configurar argumentos de línea de comandos no reproduce esta prueba.
 
 **Resultado observado con los archivos de prueba:** se imprimió una estructura `Preferencia` y se importaron **36 cursos** como estructuras `Curso`, incluidos sus grupos y bloques horarios. Esta cantidad corresponde al catálogo utilizado para la verificación; no es un valor fijo del programa.
+
+**Prueba temporal de integración de la salida:** se utilizó `Combinaciones_Simuladas.rkt` para proporcionar dos combinaciones ficticias mediante una secuencia compatible con `(Sequenceof Combinacion)`. Ese módulo solo define los datos; no escribe archivos. En la versión de prueba, `main.rkt` importó la secuencia y llamó directamente a `exportar-combinaciones-json` de `Output.rkt`, que generó `combinaciones_salida.json` con dos combinaciones. Esta comprobación valida la conexión entre módulos y la escritura JSON, pero no la generación ni el filtrado reales de las partes B y C.
+
+**Ruta de salida:** la llamada `exportar-combinaciones-json` recibe `"combinaciones_salida.json"`, una ruta relativa al directorio de trabajo desde el que se ejecuta el programa. Al ejecutarlo desde la carpeta `Racket`, el archivo se escribe en esa misma carpeta. No es necesario establecer una ruta absoluta en `Output.rkt`.
 
 #### 1.5.2 Incidencias encontradas y soluciones aplicadas
 
@@ -327,7 +331,7 @@ Se utilizaron `call-with-input-file` y `read-json` de la librería `typed/json` 
 
 ## 6. Salida: serialización y exportación a JSON (Parte D)
 
-Módulo: `Output.rkt`. Convierte una lista de `Combinacion` en un archivo JSON estructurado.
+Módulo: `Output.rkt`. Recorre una secuencia de `Combinacion` y la exporta a un archivo JSON estructurado sin materializar todas las combinaciones en una lista.
 
 ### 6.1 Justificación del formato (JSON frente a CSV)
 
@@ -356,7 +360,8 @@ El módulo utiliza **JSON** como formato único para la serialización de salida
 | `par->jsexpr` | `(-> (Pairof Curso Grupo) JSExpr)` | Convierte un par curso-grupo en un objeto. |
 | `combinacion->jsexpr` | `(-> Combinacion JSExpr)` | Convierte una combinación. |
 | `escribir-json-bonito` | `(-> JSExpr Output-Port Integer Void)` | Escribe un `JSExpr` en un puerto con indentación. |
-| `exportar-combinaciones-json` | `(-> String (Listof Combinacion) Void)` | Escribe todas las combinaciones en el archivo indicado. |
+| `escribir-combinaciones-stream` | `(-> (Sequenceof Combinacion) Output-Port Void)` | Recorre y escribe las combinaciones de forma incremental, sin materializar la secuencia completa. |
+| `exportar-combinaciones-json` | `(-> String (Sequenceof Combinacion) Void)` | Abre el archivo indicado y exporta las combinaciones recibidas como secuencia. |
 
 ### 6.4 Esquema del JSON de salida
 
@@ -413,5 +418,5 @@ El módulo utiliza **JSON** como formato único para la serialización de salida
 ### 6.5 Caso límite real resuelto
 
 **Curso sin correquisito (valor ausente de extremo a extremo):**
-Un curso sin correquisito llega con el valor `null`. `read-json` lo convierte en el símbolo `'null`. Durante el parseo en `Importar.rkt`, `parsear-curso` valida mediante `string?` y le asigna `#f` en caso negativo. Al momento de exportar en `Output.rkt`, `escribir-json-bonito` traduce `#f` como `0` para mantener el estándar de enteros atómicos requeridos.
+Un curso sin correquisito llega con el valor JSON `null`. Durante el parseo en `Importar.rkt`, `parsear-curso` valida el campo mediante `string?` y almacena `#f` si no contiene una cadena. Al serializar, `curso->jsexpr` transforma ese `#f` en el símbolo `'null`, que `escribir-json-bonito` escribe como el valor JSON `null`. En cambio, las banderas booleanas de elegibilidad y choque se representan numéricamente: `#t` como `1` y `#f` como `0`.
 

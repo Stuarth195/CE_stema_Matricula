@@ -2,7 +2,8 @@
 
 (require "Estructuras.rkt"
          "Importar.rkt"
-         "Output.rkt")
+         "Output.rkt"
+         "Combinaciones_Simuladas.rkt")
 
 ;; ============================================================
 ;; MAIN - CEmestre
@@ -52,6 +53,13 @@
     (writeln curso))
   (displayln "\n================ FIN DEL CATALOGO ================"))
 
+;; Punto de conexion estable con Output.rkt.
+;; Acepta directamente streams u otras secuencias de Combinacion.
+;; La exportacion consume la secuencia sin convertirla a lista.
+(: guardar-combinaciones (-> String (Sequenceof Combinacion) Void))
+(define (guardar-combinaciones ruta-salida combinaciones)
+  (exportar-combinaciones-json ruta-salida combinaciones))
+
 ;; Orquesta la importacion y deja los datos para los companeros.
 (: ejecutar-main (-> String String Void))
 (define (ejecutar-main ruta-preferencias ruta-catalogo)
@@ -61,31 +69,45 @@
                        (cargar-lista-cursos ruta-catalogo)])
 
     ;; ========================================================
-    ;; ZONA DE INTEGRACION PARA La logica de filtrado 
+    ;; ZONA DE INTEGRACION: GENERACION -> FILTRADO -> EXPORTACION
     ;;
-    ;; Valores disponibles EN ESTE BLOQUE:
+    ;; Datos ya disponibles:
     ;;   preferencias : Preferencia
     ;;   lista-cursos : (Listof Curso)
     ;;
-    ;; Definir aqui el filtrado y las combinaciones, ANTES de
-    ;; las instrucciones de impresion. Los nombres de funciones
-    ;; siguientes son ejemplos: todavia no estan implementadas.
+    ;; IMPORTANTE: Output.rkt acepta (Sequenceof Combinacion),
+    ;; por lo que NO se debe convertir el stream a una lista.
     ;;
-    ;; (define lista-cursos-filtrados : (Listof Curso)
-    ;;   (filtrar-cursos lista-cursos preferencias))
+    ;; Una vez que David y Claudio entreguen sus modulos:
+    ;;   1. Agregar los require correspondientes al inicio.
+    ;;   2. Reemplazar los nombres ilustrativos siguientes
+    ;;      por las funciones reales y sus firmas.
+    ;;   3. Descomentar la generacion, filtrado y exportacion.
     ;;
-    ;; (define lista-combinaciones : (Listof Combinacion)
-    ;;   (generar-combinaciones lista-cursos-filtrados preferencias))
+    ;; (define combinaciones-generadas : (Sequenceof Combinacion)
+    ;;   (generar-combinaciones lista-cursos preferencias))
+    ;;
+    ;; (define combinaciones-filtradas : (Sequenceof Combinacion)
+    ;;   (filtrar-por-creditos combinaciones-generadas
+    ;;                        (Preferencia-creditos-min preferencias)
+    ;;                        (Preferencia-creditos-max preferencias)))
+    ;;
+    ;; (guardar-combinaciones "combinaciones_salida.json"
+    ;;                       combinaciones-filtradas)
+    ;;
+    ;; Las firmas y nombres de generar-combinaciones y
+    ;; filtrar-por-creditos son EJEMPLOS, no API confirmada.
+    ;; NO descomentar antes de que existan ambos modulos.
     ;; ========================================================
 
     ;; Pruebas visuales en consola.
     (imprimir-preferencias preferencias)
     (imprimir-lista-cursos lista-cursos)
 
-    ;; Cuando exista lista-combinaciones, descomentar la llamada:
-    ;; (exportar-combinaciones-json
-    ;;   "combinaciones_salida.json"
-    ;;   lista-combinaciones)
+    ;; Prueba temporal: el simulador solo aporta los datos.
+    ;; La escritura del JSON la realiza Output.rkt desde este main.
+    (exportar-combinaciones-json "combinaciones_salida.json"
+                                 combinaciones-simuladas)
 
     (displayln "\nDatos importados. Listos para el filtrado.")
     (void)))
