@@ -63,45 +63,49 @@ read-json funcion de racket lee la entrada pasada por (call-with-input-file) y l
 (: parsear-curso (-> Any Curso))
 (define (parsear-curso objeto-json-curso)
   (let* ([objeto-curso-json (if (hash? objeto-json-curso) objeto-json-curso #hasheq())]
-
+         
          ;; Extracción y validación de la carrera
          [carrera-en-bruto (hash-ref objeto-curso-json 'carrera (lambda () #f))]
          [carrera-extraida (if (string? carrera-en-bruto) carrera-en-bruto "")]
-
+         
          ;; Extracción y validación del código
          [codigo-en-bruto (hash-ref objeto-curso-json 'codigo (lambda () #f))]
          [codigo-extraido (if (string? codigo-en-bruto) codigo-en-bruto "")]
-
+         
          ;; Extracción y validación del nombre
          [nombre-en-bruto (hash-ref objeto-curso-json 'nombre (lambda () #f))]
          [nombre-extraido (if (string? nombre-en-bruto) nombre-en-bruto "")]
-
+         
          ;; Extracción y validación de los créditos
          [creditos-en-bruto (hash-ref objeto-curso-json 'creditos (lambda () #f))]
          [creditos-extraidos (if (exact-integer? creditos-en-bruto) creditos-en-bruto 0)]
-
+         
          ;; Extracción de los grupos: cada elemento pasa por parsear-grupo
          [grupos-en-bruto (hash-ref objeto-curso-json 'grupos (lambda () '()))]
          [lista-grupos-json (if (list? grupos-en-bruto) grupos-en-bruto '())]
          [lista-grupos-del-curso (map parsear-grupo lista-grupos-json)]
-
-         ;; Extracción de los requisitos: solo se conservan los elementos que sean String
+         
+         ;; Extracción de los requisitos:
+         ;; Se conservan únicamente los String válidos,
+         ;; descartando aquellos cuyo contenido sea "Null".
          [requisitos-en-bruto (hash-ref objeto-curso-json 'requisitos (lambda () '()))]
          [lista-requisitos-json (if (list? requisitos-en-bruto) requisitos-en-bruto '())]
-         [lista-requisitos-extraidos (filter string? lista-requisitos-json)]
-
+         [lista-requisitos-extraidos
+          (filter (lambda ([requisito : String])
+                    (not (string-ci=? requisito "Null")))
+                  (filter string? lista-requisitos-json))]
+         
          ;; Extracción del correquisito (String o #f cuando el JSON trae null)
          [correquisito-en-bruto (hash-ref objeto-curso-json 'correquisito (lambda () #f))]
          [correquisito-extraido (if (string? correquisito-en-bruto) correquisito-en-bruto #f)]
-
+         
          ;; Banderas calculadas por el módulo de C (las llaves del JSON usan guion bajo)
          [choca-en-bruto (hash-ref objeto-curso-json 'choca_con_alguno (lambda () #f))]
          [choca-extraido (eq? choca-en-bruto #t)]
-
          [puede-matricular-en-bruto (hash-ref objeto-curso-json 'puede_matricular (lambda () #f))]
          [puede-matricular-extraido (eq? puede-matricular-en-bruto #t)])
-
-    ;; Construcción final de la estructura tipada Curso(Lo arma)
+    
+    ;; Construcción final de la estructura tipada Curso
     (Curso carrera-extraida
            codigo-extraido
            nombre-extraido
@@ -111,7 +115,7 @@ read-json funcion de racket lee la entrada pasada por (call-with-input-file) y l
            correquisito-extraido
            choca-extraido
            puede-matricular-extraido)))
-
+           
 ;; 4. Función que parsea un curso de interés individual
 (: parsear-curso-interes (-> Any Curso-Interes))
 (define (parsear-curso-interes objeto-json-curso-interes)
