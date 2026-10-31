@@ -2,22 +2,26 @@
   "carnet": "2023054321",
   "cursos_interes": [
     {
-      "codigo": "MA1001",
-      "grupos": [3, 5, 8]
-    },
-    {
-      "codigo": "FI1101",
+      "codigo": "IC5821",
       "grupos": [1, 2]
     },
     {
-      "codigo": "CE1102",
-      "grupos": [4, 6]
+      "codigo": "IC6821",
+      "grupos": [1, 2]
     },
     {
-      "codigo": "CS2101",
-      "grupos": [1]
+      "codigo": "MA1403",
+      "grupos": [2, 3, 5]
+    },
+    {
+      "codigo": "MA2404",
+      "grupos": [1, 3]
+    },
+    {
+      "codigo": "SE1101",
+      "grupos": [1, 2]
     }
   ],
   "creditos_min": 12,
-  "creditos_max": 20
+  "creditos_max": 16
 }
