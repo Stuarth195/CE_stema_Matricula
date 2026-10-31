@@ -1,0 +1,23 @@
+{
+  "carnet": "2023054321",
+  "cursos_interes": [
+    {
+      "codigo": "MA1001",
+      "grupos": [3, 5, 8]
+    },
+    {
+      "codigo": "FI1101",
+      "grupos": [1, 2]
+    },
+    {
+      "codigo": "CE1102",
+      "grupos": [4, 6]
+    },
+    {
+      "codigo": "CS2101",
+      "grupos": [1]
+    }
+  ],
+  "creditos_min": 12,
+  "creditos_max": 20
+}

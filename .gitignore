@@ -57,4 +57,10 @@ dkms.conf
 #Vscode config
 *.vscode
 
+# Backups y temporales
+*.bak
+
+# Carpeta de compilación de Racket
+Racket/compiled/
+
 main
