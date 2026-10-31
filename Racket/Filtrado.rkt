@@ -15,7 +15,7 @@
 (define-type (Lazy-Stream A) (U Null (Stream-Cons A)))
 
 ;; ============================================================
-;; POLIMORFISMO PARAMÉTRICO (Requisito 5 de la rúbrica - 8%)
+;; POLIMORFISMO PARAMÉTRICO 
 ;; ============================================================
 
 ;; 1. Filtro polimórfico perezoso sobre Streams:
