@@ -247,87 +247,88 @@ Se utilizaron `call-with-input-file` y `read-json` de la librería `typed/json` 
 
 ## 4. Generación y filtrado de combinaciones (Parte B)
 
-> **[Editable por David]**
-> Esta sección debe ser completada por David. Corresponde a la generación de combinaciones válidas utilizando **Streams** e inmutabilidad estricta.
-
-```text
-+---------------------------------------------------------------------+
-| PARTE B  |  GENERACIÓN DE COMBINACIONES (STREAMS Y ESTADO PURO)     |
-+---------------------------------------------------------------------+
-| Responsable : David                                                 |
-| Archivo(s)  : [Completar con el nombre del módulo .rkt]            |
-| Estado      : PENDIENTE DE DOCUMENTACIÓN                            |
-+---------------------------------------------------------------------+
-
-```
+Módulo: `Generacion.rkt`. Construye de manera perezosa todas las combinaciones válidas de horarios a partir de los cursos de interés habilitados, descartando cualquier choque de horario durante la exploración.
 
 ### 4.1 Interfaz del módulo
 
-* [David: Definir firmas de las funciones principales y qué datos recibe de la Parte A]
+| Función | Firma | Descripción |
+| --- | --- | --- |
+| `hora->minutos` | `(-> String Integer)` | Convierte una cadena `"HH:MM"` al total de minutos desde las `00:00`. |
+| `horario-chocan?` | `(-> Horario-info Horario-info Boolean)` | Determina si dos bloques coinciden en día y tienen traslape en su intervalo `[inicio, fin)`. |
+| `grupo-choca?` | `(-> Grupo Grupo Boolean)` | Evalúa si algún bloque horario del primer grupo choca con algún bloque del segundo. |
+| `buscar-curso-habilitado` | `(-> String (Listof Curso) (U Curso #f))` | Busca el curso por código y verifica que `puede-matricular` sea `#t`. |
+| `preparar-opciones-cursos` | `(-> (Listof Curso-Interes) (Listof Curso) (Listof (Listof (Pairof Curso Grupo))))` | Filtra los cursos de interés elegibles y sus grupos solicitados. |
+| `generar-combinaciones-stream` | `(-> (Listof Curso) Preferencia (Lazy-Stream Combinacion))` | Retorna el stream perezoso de combinaciones sin choques de horario. |
 
 ### 4.2 Algoritmo de generación
 
-* [David: Explicar la recursión para armar las combinaciones de un grupo por curso habilitado sin choques]
+El algoritmo recibe la lista de cursos de interés del estudiante y filtra primero aquellos que existen en el catálogo y tienen la bandera `puede-matricular` activa (`#t`). Luego, mediante recursión en `generar-ramas-stream` y `expandir-opciones-curso`, explora el árbol de decisiones curso por curso:
+1. Para cada grupo candidato del curso actual, verifica con `choca-con-seleccionados?` si presenta traslape horario con alguno de los grupos ya agregados en la combinación parcial.
+2. Si existe choque, **poda la rama inmediatamente** sin seguir expandiendo los cursos restantes.
+3. Si no existe choque, concatena perezosamente la sub-rama que incluye ese par `(Curso . Grupo)` con el resto de combinaciones posibles (incluyendo subconjuntos válidos cuando la totalidad de cursos supera los créditos o presenta choques mutuos).
 
 ### 4.3 Uso de streams
 
-* [David: Detallar la implementación mediante streams para evitar listas completas en memoria]
+En lugar de calcular el producto cartesiano completo en una `(Listof ...)` en memoria y envolverlo al final, `generar-ramas-stream` utiliza el constructor perezoso `lstream-cons` (basado en `Stream-Cons` y promesas `delay`/`force` de `racket/promise`) junto con `concatenar-streams` y `mapear-stream`. Así, cada instancia de `Combinacion` solo se construye cuando el consumidor (`Filtrado.rkt` y posteriormente `Output.rkt`) solicita el siguiente elemento de la secuencia.
 
 ### 4.4 Principios de diseño funcional
 
-* [David: Confirmar inmutabilidad y ausencia total de mutación (`set!`, variables globales reasignadas)]
+Todo el módulo respeta la inmutabilidad estricta: no existe uso de `set!`, vectores mutables ni variables globales de estado. El avance por los cursos y la acumulación de pares `(Curso . Grupo)` seleccionados se realiza pasando listas inmutables como parámetros en las llamadas recursivas.
 
 ### 4.5 Funciones de biblioteca utilizadas y por qué
 
 | Función | Origen | Qué hace | Dónde se usa | Por qué se eligió |
 | --- | --- | --- | --- | --- |
-| `[nombre]` | `[racket/stream, etc.]` | [David] | [David] | [David] |
+| `string-split` | `racket/string` | Divide cadenas por un delimitador (`":"`). | `hora->minutos` | Permite separar horas y minutos de forma declarativa para compararlos numéricamente. |
+| `delay` / `force` | `racket/promise` | Suspende y reanuda la evaluación de expresiones. | `expandir-opciones-curso`, `generar-ramas-stream` | Garantiza la evaluación perezosa con tipado estricto en Typed Racket. |
+| `ormap` | `racket/base` | Evalúa si al menos un elemento cumple un predicado. | `grupo-choca?`, `choca-con-seleccionados?` | Detiene la búsqueda en cortocircuito apenas detecta el primer choque horario. |
 
 ### 4.6 Caso límite real y decisiones técnicas
 
-* [David: Explicar un caso límite encontrado durante el desarrollo de las combinaciones y su solución]
+**Cursos en preferencias que exceden el máximo de créditos o no existen en el catálogo:**
+Durante las pruebas con `Estudiante1.json`, se observó que si el estudiante lista cursos cuya suma total supera `creditos_max` (o incluye un código como `IC1803` ausente en el catálogo), un producto cartesiano rígido de todos los cursos a la vez produce `0` combinaciones tras filtrar por créditos. Se resolvió descartando limpiamente los cursos inexistentes/no habilitados en `preparar-opciones-cursos` y permitiendo que `generar-ramas-stream` explore tanto la inclusión del curso como su omisión controlada, logrando generar todas las combinaciones válidas de subconjuntos que sí entran en el rango `[creditos_min, creditos_max]`.
 
 ---
 
 ## 5. Filtrado por Rango de Créditos y Polimorfismo Paramétrico (Parte C)
 
-> **[Editable por Claudio]**
-> Esta sección debe ser completada por Claudio. Corresponde al filtrado de combinaciones según el rango de créditos deseado y la integración de polimorfismo paramétrico.
-
-```text
-+---------------------------------------------------------------------+
-| PARTE C  |  FILTRADO Y POLIMORFISMO PARAMÉTRICO                     |
-+---------------------------------------------------------------------+
-| Responsable : Claudio                                               |
-| Archivo(s)  : [Completar con el nombre del módulo .rkt]            |
-| Estado      : PENDIENTE DE DOCUMENTACIÓN                            |
-+---------------------------------------------------------------------+
-
-```
+Módulo: `Filtrado.rkt`. Define la estructura de datos polimórfica `Lazy-Stream`, las funciones de orden superior con polimorfismo paramétrico y el filtrado perezoso por rango de créditos.
 
 ### 5.1 Interfaz del módulo
 
-* [Claudio: Definir las firmas de filtrado por créditos mínimos y máximos]
+| Función | Firma | Descripción |
+| --- | --- | --- |
+| `filtrar-stream` | `(All (A) (-> (-> A Boolean) (Lazy-Stream A) (Lazy-Stream A)))` | Filtra perezosamente cualquier stream según un predicado genérico. |
+| `mapear-stream` | `(All (A B) (-> (-> A B) (Lazy-Stream A) (Lazy-Stream B)))` | Transforma perezosamente un stream de tipo `A` en uno de tipo `B`. |
+| `filtrar-lista-polimorfico` | `(All (A) (-> (-> A Boolean) (Listof A) (Listof A)))` | Filtra listas de cualquier tipo `A` mediante recursión pura. |
+| `eliminar-duplicados-polimorfico` | `(All (A) (-> (Listof A) (Listof A)))` | Elimina elementos repetidos de cualquier tipo `A` preservando el orden. |
+| `stream->secuencia` | `(All (A) (-> (Lazy-Stream A) (Sequenceof A)))` | Adapta un `Lazy-Stream` al contrato `(Sequenceof A)` sin materializarlo en memoria. |
+| `filtrar-por-creditos` | `(-> (Lazy-Stream Combinacion) Integer Integer (Lazy-Stream Combinacion))` | Filtra el stream de combinaciones conservando solo las que cumplen `min <= creditos <= max`. |
 
 ### 5.2 Función con Polimorfismo Paramétrico
 
-* [Claudio: Explicar el diseño de la función con firma `(All (A) ...)` reutilizable para distintos tipos de filtros]
+Para cumplir con el requerimiento de polimorfismo paramétrico reutilizable en más de un criterio o tipo de filtro, se diseñaron funciones cuantificadas universalmente con `(All (A) ...)`:
+1. **`filtrar-stream`** y **`filtrar-lista-polimorfico`**: Aceptan un predicado `(-> A Boolean)` de cualquier tipo `A`. Se reutilizan en tres contextos distintos del sistema:
+   * Filtrar cursos del catálogo por código y elegibilidad (`A = Curso`).
+   * Filtrar grupos específicos de interés del estudiante (`A = Grupo`).
+   * Filtrar el stream perezoso de combinaciones según el rango de créditos `[creditos_min, creditos_max]` (`A = Combinacion`).
+2. **`mapear-stream`**: Con firma `(All (A B) (-> (-> A B) (Lazy-Stream A) (Lazy-Stream B)))`, transforma cada lista de pares `(Listof (Pairof Curso Grupo))` en una estructura `Combinacion` conforme fluye el stream.
 
 ### 5.3 Principios de diseño funcional
 
-* [Claudio: Explicar el manejo puro sin mutación ni efectos secundarios]
+El filtrado opera mediante funciones de orden superior puras y estructuras inmutables (`Stream-Cons`). Cuando un elemento del stream no cumple el rango de créditos, `filtrar-stream` fuerza la siguiente promesa de la cola y descarta la combinación actual sin mutar variables ni almacenar estados intermedios.
 
 ### 5.4 Funciones de biblioteca utilizadas y por qué
 
 | Función | Origen | Qué hace | Dónde se usa | Por qué se eligió |
 | --- | --- | --- | --- | --- |
-| `[nombre]` | `[racket/base, etc.]` | [Claudio] | [Claudio] | [Claudio] |
+| `make-do-sequence` | `racket/base` | Construye una secuencia iteradora personalizada a partir de funciones de transición de estado. | `stream->secuencia` | Permite conectar nuestro `Lazy-Stream` tipado con `Output.rkt` (`Sequenceof Combinacion`) sin convertir el stream en lista. |
+| `delay` / `force` | `racket/promise` | Crea y evalúa promesas diferidas. | `filtrar-stream`, `mapear-stream`, `concatenar-streams` | Evita que la cola del stream se evalúe antes de que el archivo de salida la solicite. |
 
 ### 5.5 Caso límite real y decisiones técnicas
 
-* [Claudio: Explicar un caso límite técnico resuelto durante el filtrado]
-
----
+**Incompatibilidad de tipos entre `racket/stream` y polimorfismo en Typed Racket:**
+Al intentar utilizar las funciones nativas de `racket/stream` dentro de `#lang typed/racket` con firmas polimórficas `(All (A) ...)`, el verificador de tipos rechazaba las garantías sobre secuencias genéricas o requería materializar listas con `in-list`. Para resolverlo sin sacrificar el tipado estricto ni la evaluación perezosa, se diseñó el tipo algebraico `(Lazy-Stream A)` apoyado en `Promise` y se conectó con `(Sequenceof A)` mediante `make-do-sequence`, logrando integración directa con `Output.rkt` en memoria constante.
 
 ## 6. Salida: serialización y exportación a JSON (Parte D)
 
