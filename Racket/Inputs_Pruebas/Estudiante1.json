@@ -2,14 +2,22 @@
   "carnet": "2024123456",
   "cursos_interes": [
     {
-      "codigo": "IC1803",
+      "codigo": "IC5821",
+      "grupos": [1, 2, 3]
+    },
+    {
+      "codigo": "IC6821",
       "grupos": [1, 2]
     },
     {
-      "codigo": "IC2101",
-      "grupos": [1]
+      "codigo": "MA1403",
+      "grupos": [1, 2, 3, 4]
+    },
+    {
+      "codigo": "MA2404",
+      "grupos": [1, 2, 3]
     }
   ],
-  "creditos_min": 10,
-  "creditos_max": 18
+  "creditos_min": 8,
+  "creditos_max": 16
 }
