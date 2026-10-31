@@ -7,7 +7,7 @@
          "Output.rkt")
 
 ;; ============================================================
-;; MAIN - CEmestre (Integración de Etapas A, B, C y D)
+;; MAIN - CEmestre 
 ;; ============================================================
 
 (: cargar-lista-cursos (-> String (Listof Curso)))
